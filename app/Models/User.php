@@ -8,13 +8,13 @@ class User implements Model
 
     public function __construct()
     {
-        $this->db = new Database();
+        $this->db = Database::getInstance();
     }
 
 
     public function getAll(): array
     {
-        $this->db->query("SELECT * FROM `products`");
+        $this->db->query(sql: "SELECT * FROM `products`");
         return $this->db->resultSet();
     }
 
