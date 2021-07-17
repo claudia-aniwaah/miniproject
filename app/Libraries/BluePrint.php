@@ -4,6 +4,7 @@
 class BluePrint
 {
     private Database $db;
+    private string $table_name;
 
     public function __construct()
     {
@@ -11,52 +12,56 @@ class BluePrint
     }
 
 
-    protected function createTable(string $table_name, array $table_params, string $engine = "INNODB"): Database
+    protected function createTable(string $table_name, array $table_params, string $engine = "INNODB"): Blueprint
     {
+        $this->table_name = $table_name;
         $combine_stmt = array_map(static function ($key, $value) {
             return "`$key` {$value}";
         }, array_keys($table_params), $table_params);
 
         $this->db->query(sql: "CREATE TABLE `$table_name`" . "(" . implode(",", $combine_stmt) . ")ENGINE=$engine");
         $this->db->execute();
-        return $this->db;
+        return $this;
     }
 
 
-    protected function initializeAutoIncrement(string $table_name, int $start_num): Database
+    protected function initializeAutoIncrement(int $start_num): Blueprint
     {
-        $this->db->query(sql: "ALTER TABLE $table_name AUTO_INCREMENT=" . $start_num);
+        $this->db->query(sql: "ALTER TABLE $this->table_name AUTO_INCREMENT=" . $start_num);
         $this->db->execute();
-        return $this->db;
+        return $this;
     }
 
 
-    protected function alter(string $table_name, string $old_col, string $constraints, string $new_col = null): Database
+    protected function alter(string $table_name, string $old_col, string $constraints, string $new_col = null): Blueprint
     {
         if (is_null($new_col)) {
             $new_col = $old_col;
         }
         $this->db->query(sql: "ALTER TABLE $table_name CHANGE $old_col $new_col" . $constraints);
         $this->db->execute();
-        return $this->db;
+        return $this;
     }
 
-
-    protected function setPK(string $table_name, array $cols, string $constraint_name = null): Database
+    protected function setPK(array $cols, string $constraint_name = null): Database
     {
         if (is_null($constraint_name)) {
-            $this->db->query(sql: "ALTER TABLE $table_name ADD PRIMARY KEY (" . implode(",", $cols) . ")");
+            $this->db->query(sql: "ALTER TABLE $this->table_name ADD PRIMARY KEY (" . implode(",", $cols) . ")");
         } else {
-            $this->db->query(sql: "ALTER TABLE $table_name ADD CONSTRAINT $constraint_name PRIMARY (" . implode(",", $cols) . ")");
+            $this->db->query(sql: "ALTER TABLE $this->table_name ADD CONSTRAINT $constraint_name PRIMARY (" . implode(",", $cols) . ")");
         }
         $this->db->execute();
         return $this->db;
     }
 
 
-    protected
-    function setFK(string $table_name, string $key, string $ref): void
+    protected function setFK(string $table_name, string $ref_table_name, array $ref_cols, string $key, string $ref, array $cols, $constraint_name = null): void
     {
-//        $this->db->query(sql: "CREATE TABLE " . $table_name . "(" . $table_params . ")");
+        if (is_null($constraint_name)) {
+            $this->db->query(sql: "ALTER TABLE $table_name ADD FOREIGN KEY (" . implode(",", $cols) . ") REFERENCES $ref_table_name (" . implode(",", $ref_cols) . ") ON DELETE CASCADE ON UPDATE CASCADE");
+        } else {
+            $this->db->query(sql: "ALTER TABLE $table_name ADD CONSTRAINT $constraint_name FOREIGN KEY (" . implode(",", $cols) . ") REFERENCES $ref_table_name (" . implode(",", $ref_cols) . ") ON DELETE CASCADE ON UPDATE CASCADE");
+        }
+        $this->db->execute();
     }
 }
