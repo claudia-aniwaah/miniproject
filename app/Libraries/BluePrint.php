@@ -19,7 +19,7 @@ class BluePrint
             return "`$key` {$value}";
         }, array_keys($table_params), $table_params);
 
-        $this->db->query(sql: "CREATE TABLE `$table_name`" . "(" . implode(",", $combine_stmt) . ")ENGINE=$engine");
+        $this->db->query(sql: "CREATE TABLE IF NOT EXISTS `$table_name`" . "(" . implode(",", $combine_stmt) . ")ENGINE=$engine");
         $this->db->execute();
         return $this;
     }
@@ -54,13 +54,12 @@ class BluePrint
         return $this->db;
     }
 
-
-    protected function setFK(string $table_name, string $ref_table_name, array $ref_cols, string $key, string $ref, array $cols, $constraint_name = null): void
+    protected function setFK(string $table_name, string $col, string $ref_table_name, string $ref_col, string $constraint_name = null): void
     {
         if (is_null($constraint_name)) {
-            $this->db->query(sql: "ALTER TABLE $table_name ADD FOREIGN KEY (" . implode(",", $cols) . ") REFERENCES $ref_table_name (" . implode(",", $ref_cols) . ") ON DELETE CASCADE ON UPDATE CASCADE");
+            $this->db->query(sql: "ALTER TABLE $table_name ADD FOREIGN KEY ($col) REFERENCES $ref_table_name($ref_col) ON DELETE CASCADE ON UPDATE CASCADE");
         } else {
-            $this->db->query(sql: "ALTER TABLE $table_name ADD CONSTRAINT $constraint_name FOREIGN KEY (" . implode(",", $cols) . ") REFERENCES $ref_table_name (" . implode(",", $ref_cols) . ") ON DELETE CASCADE ON UPDATE CASCADE");
+            $this->db->query(sql: "ALTER TABLE $table_name ADD CONSTRAINT $constraint_name FOREIGN KEY ($col) REFERENCES $ref_table_name($ref_col) ON DELETE CASCADE ON UPDATE CASCADE");
         }
         $this->db->execute();
     }

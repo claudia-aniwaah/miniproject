@@ -10,7 +10,7 @@ class Table extends BluePrint
         $this->genderTable();
         $this->maritalStatusTable();
         $this->positionsTable();
-
+        $this->staffTable();
     }
 
     /*
@@ -47,32 +47,53 @@ class Table extends BluePrint
     private function genderTable(): void
     {
         $tableCols = array(
-            "gender_id" => "INT NOT NULL PRIMARY KEY",
+            "gender_id" => "INT NOT NULL PRIMARY KEY AUTO_INCREMENT",
             "gender_name" => "VARCHAR(10)"
         );
-        $this->createTable('gender', $tableCols);
-
+        $this->createTable(table_name: 'gender', table_params: $tableCols);
     }
 
     private function maritalStatusTable(): void
     {
         $tableCols = array(
-            "marital_status_id" => "INT PRIMARY KEY NOT NULL",
+            "marital_status_id" => "INT PRIMARY KEY NOT NULL AUTO_INCREMENT",
             "status" => "VARCHAR(30) "
         );
-        $this->createTable('marital_status', $tableCols);
+        $this->createTable(table_name: 'marital_status', table_params: $tableCols);
     }
 
     private function positionsTable(): void
     {
         $tableCols = array(
-            "position_id" => "INT",
+            "position_id" => "INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
             "position_name" => "VARCHAR(50)",
             "position_desc" => "VARCHAR(200)",
             "position_salary" => "DECIMAL(13,2)",
         );
-        $this->createTable('positions', $tableCols);
+        $this->createTable(table_name: 'positions', table_params: $tableCols);
 
+    }
+
+
+    private function staffTable(): void
+    {
+        $tableCols = array(
+            "staff_id" => "INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
+            "position_id" => "INT NOT NULL",
+            "gender_id" => "INT NOT NULL",
+            "marital_status_id" => "INT NOT NULL",
+            "first_name" => "VARCHAR(50)",
+            "last_name" => "VARCHAR(50)",
+            "address" => "VARCHAR(100)",
+            "phone_number" => "VARCHAR(50)",
+            "email" => "VARCHAR(50)",
+            "user_name" => "VARCHAR(50)",
+            "password" => "VARCHAR(250)",
+            "created_at" => "DATETIME DEFAULT CURRENT_TIMESTAMP",
+            "updated_at" => "DATETIME ON UPDATE CURRENT_TIMESTAMP"
+        );
+        $this->createTable(table_name: 'staff', table_params: $tableCols)
+            ->setFK(table_name: 'staff', col: 'position_id', ref_table_name: 'positions', ref_col: 'position_id', constraint_name: 'fk_positions');
     }
 
     private function customerTable(): void

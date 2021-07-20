@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @property User userModel
+ * @property UserModel userModel
  */
 
 class Pages extends Controller
 {
     public function __construct()
     {
-        $this->userModel = $this->model("User");
+        $this->userModel = $this->model("UserModel");
     }
 
     public function index(): void

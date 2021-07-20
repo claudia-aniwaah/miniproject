@@ -2,19 +2,20 @@
 
 require_once 'Model.php';
 
-class User implements Model
+class UserModel implements Model
 {
     private Database $db;
 
     public function __construct()
     {
         $this->db = Database::getInstance();
+        $this->insertInto();
     }
 
 
     public function getAll(): array
     {
-        $this->db->query(sql: "SELECT * FROM `products`");
+        $this->db->query(sql: "SELECT * FROM `gender`");
         return $this->db->resultSet();
     }
 
@@ -32,5 +33,20 @@ class User implements Model
     {
         // TODO: Implement search() method.
         return [];
+    }
+
+    public function insertInto(): void
+    {
+        $sql = "INSERT INTO gender (gender_name) SELECT * FROM (SELECT (?)) AS tmp
+        WHERE NOT EXISTS (SELECT gender_name FROM gender WHERE gender_name = (?)) LIMIT 1";
+
+        $this->db->query(sql: $sql);
+        $values = array("Male", "Male");
+        $this->db->insert($values);
+    }
+
+    public function update(string $id): void
+    {
+        // TODO: Implement update() method.
     }
 }

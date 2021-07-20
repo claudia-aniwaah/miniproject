@@ -80,6 +80,10 @@ class Database
         return $this->statement->fetch(PDO::FETCH_OBJ);
     }
 
+    public function insert(array $values): void
+    {
+        $this->statement->execute($values);
+    }
 
     public function rowCount(): int
     {
