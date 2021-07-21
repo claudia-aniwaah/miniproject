@@ -57,9 +57,11 @@ class BluePrint
     protected function setFK(string $table_name, string $col, string $ref_table_name, string $ref_col, string $constraint_name = null): void
     {
         if (is_null($constraint_name)) {
-            $this->db->query(sql: "ALTER TABLE $table_name ADD FOREIGN KEY ($col) REFERENCES $ref_table_name($ref_col) ON DELETE CASCADE ON UPDATE CASCADE");
+            $this->db->query(sql: "SET FOREIGN_KEY_CHECKS=0; ALTER TABLE $table_name ADD FOREIGN KEY ($col) REFERENCES $ref_table_name($ref_col) ON DELETE CASCADE ON UPDATE CASCADE; SET FOREIGN_KEY_CHECKS=1");
         } else {
-            $this->db->query(sql: "ALTER TABLE $table_name ADD CONSTRAINT $constraint_name FOREIGN KEY ($col) REFERENCES $ref_table_name($ref_col) ON DELETE CASCADE ON UPDATE CASCADE");
+
+
+            $this->db->query(sql: "SET FOREIGN_KEY_CHECKS=0; ALTER TABLE $table_name ADD CONSTRAINT $constraint_name FOREIGN KEY ($col) REFERENCES $ref_table_name($ref_col) ON DELETE CASCADE ON UPDATE CASCADE; SET FOREIGN_KEY_CHECKS=1");
         }
         $this->db->execute();
     }
