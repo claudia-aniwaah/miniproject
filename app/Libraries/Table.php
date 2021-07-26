@@ -209,25 +209,22 @@ class Table extends BluePrint
 
         $this->db->query(sql: $sql);
         $hash_password = password_hash('default_password', PASSWORD_DEFAULT);
-<<<<<<< HEAD
         $value = array(2, 1, 2, "Claudia", "Aniwaah", null, "Some address in Suame", "0547623711", "claudiaaniwaah18@gmail.com", $hash_password);
-=======
-        $value = array(2, 1, 2, "Claudia", "Aniwaah", null, "Some address", "0543453938", "claudiaaniwaah@gmail.com", $hash_password);
->>>>>>> d72d9f0f1b0ee7074cafe8018370a53632892a2c
         $this->db->insert($value);
     }
+
     private function customerTable(): void
     {
         $tableCols = array(
             "customer_id " => "INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
-            " staff_id " =>  "INT NOT NULL",
+            "staff_id " =>  "INT NOT NULL",
             "first_name" => "VARCHAR(50)",
             "last_name" => "VARCHAR(50)",
             "address" => "VARCHAR(100)",
             "phone_number" => "VARCHAR(50)",
-            "email" => "VARCHAR(50)"
-                
-        
+            "email" => "VARCHAR(50)",
+            "created_at" => "DATETIME DEFAULT CURRENT_TIMESTAMP",
+            "updated_at" => "DATETIME ON UPDATE CURRENT_TIMESTAMP"
         );
         $this->createTable(table_name: 'customer', table_params: $tableCols)
             ->setFK(table_name: 'customer', col: 'staff_id', ref_table_name: 'staff', ref_col: 'staff_id', constraint_name: 'fk_staff');
@@ -240,12 +237,14 @@ class Table extends BluePrint
         $tableCols = array(
             "product_id " => "INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
             "product_name" => "VARCHAR(50)",
-            " category_id " =>  "INT NOT NULL",
-            " supplier_id " =>  "INT NOT NULL",
+            "category_id " =>  "INT NOT NULL",
+            "supplier_id " =>  "INT NOT NULL",
             "brand_name" => "VARCHAR(50)",
-            " price" =>  "FLOAT NOT NULL",
-            " quantity " =>  "INT NOT NULL",
-            "status" => "VARCHAR(50)"
+            "price" =>  "DECIMAL(13,2) NOT NULL",
+            "quantity " =>  "INT NOT NULL",
+            "status" => "VARCHAR(50)",
+            "created_at" => "DATETIME DEFAULT CURRENT_TIMESTAMP",
+            "updated_at" => "DATETIME ON UPDATE CURRENT_TIMESTAMP"
         );
         $this->createTable(table_name: 'product', table_params: $tableCols)
             ->setFK(table_name: 'product', col: 'category_id', ref_table_name: 'category', ref_col: 'category_id', constraint_name: 'fk_category');
@@ -260,6 +259,7 @@ class Table extends BluePrint
         );
         $this->createTable(table_name: 'category', table_params: $tableCols);
         
+
     }
 
     private function supplierTable(): void
@@ -271,8 +271,9 @@ class Table extends BluePrint
             "phone_number" => "VARCHAR(50)",
             "email" => "VARCHAR(50)",
             "supplier_desc" => "VARCHAR(100)",
-            "fax" => "VARCHAR(50)"
-        
+            "fax" => "VARCHAR(50)",
+            "created_at" => "DATETIME DEFAULT CURRENT_TIMESTAMP",
+            "updated_at" => "DATETIME ON UPDATE CURRENT_TIMESTAMP"
         );
         $this->createTable(table_name: 'supplier', table_params: $tableCols);
             
@@ -285,7 +286,6 @@ class Table extends BluePrint
             "order_of_date" =>  "DATETIME DEFAULT CURRENT_TIMESTAMP",
             "customer_id" => "INT NOT NULL",
             "order_desc" => "VARCHAR(200)"
-        
         );
         $this->createTable(table_name: 'order', table_params: $tableCols)
             ->setFK(table_name: 'order', col: 'customer_id', ref_table_name: 'customer', ref_col: 'customer_id', constraint_name: 'fk_customer');
@@ -297,8 +297,9 @@ class Table extends BluePrint
         $tableCols = array(
             "bill_number " => "INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
             "payment_type" =>   "INT NOT NULL",
-            "amount"      =>  "FLOAT NOT NULL"
-        
+            "amount"      =>  "DECIMAL(13,2) NOT NULL",
+            "created_at" => "DATETIME DEFAULT CURRENT_TIMESTAMP",
+            "updated_at" => "DATETIME ON UPDATE CURRENT_TIMESTAMP"
         );
         $this->createTable(table_name: 'payment', table_params: $tableCols);
             
@@ -312,9 +313,9 @@ class Table extends BluePrint
             "product_id" => "INT NOT NULL",
             "order_id" => "INT NOT NULL",
             "size" => "INT NOT NULL",
-            " price" =>  "FLOAT NOT NULL",
+            " price" =>  "DECIMAL(13,2) NOT NULL",
             " quantity " =>  "INT NOT NULL",
-            " total" =>  "FLOAT NOT NULL",
+            " total" =>  "INT NOT NULL",
             " bill_number" =>  "INT NOT NULL"
          );
         $this->createTable(table_name: 'order_details', table_params: $tableCols)
