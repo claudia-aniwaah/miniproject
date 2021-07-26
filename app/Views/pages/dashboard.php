@@ -1,4 +1,18 @@
 <?php
 
 /** @var array $data */
-echo $data['title'];
+require APP_ROOT . "/Views/includes/head.php";
+?>
+<link rel="stylesheet" href="<?= URL_ROOT ?>/public/assets/css/dashboard-style.css" />
+<title><?= $data['title'] ?></title>
+
+</head>
+
+<body>
+    <?php require APP_ROOT . "/Views/includes/sidebar.php" ?>
+    <div>
+       
+    </div>
+</body>
+
+</html>
