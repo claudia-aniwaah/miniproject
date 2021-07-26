@@ -194,7 +194,7 @@ class Table extends BluePrint
             "other_name" => "VARCHAR(50)",
             "address" => "VARCHAR(100)",
             "phone_number" => "VARCHAR(50)",
-            "email" => "VARCHAR(50)",
+            "email" => "VARCHAR(50) UNIQUE",
             "password" => "VARCHAR(250)",
             "created_at" => "DATETIME DEFAULT CURRENT_TIMESTAMP",
             "updated_at" => "DATETIME ON UPDATE CURRENT_TIMESTAMP"
@@ -206,9 +206,14 @@ class Table extends BluePrint
 
         $sql = "INSERT IGNORE INTO `staff`(`position_id`,`gender_id`,`marital_status_id`,`first_name`,`last_name`,`other_name`, `address`,`phone_number`, `email`,`password`)
                 VALUES( (?),(?),(?),(?),(?),(?),(?),(?),(?),(?))";
+
         $this->db->query(sql: $sql);
         $hash_password = password_hash('default_password', PASSWORD_DEFAULT);
+<<<<<<< HEAD
         $value = array(2, 1, 2, "Claudia", "Aniwaah", null, "Some address in Suame", "0547623711", "claudiaaniwaah18@gmail.com", $hash_password);
+=======
+        $value = array(2, 1, 2, "Claudia", "Aniwaah", null, "Some address", "0543453938", "claudiaaniwaah@gmail.com", $hash_password);
+>>>>>>> d72d9f0f1b0ee7074cafe8018370a53632892a2c
         $this->db->insert($value);
     }
     private function customerTable(): void
