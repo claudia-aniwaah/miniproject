@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Model.php';
+require_once 'interfaces/Model.php';
 
 class UserModel implements Model
 {
@@ -37,12 +37,8 @@ class UserModel implements Model
 
     public function insertInto(): void
     {
-        $sql = "INSERT INTO gender (gender_name) SELECT * FROM (SELECT (?)) AS tmp
-        WHERE NOT EXISTS (SELECT gender_name FROM gender WHERE gender_name = (?)) LIMIT 1";
+        // TODO: Implement insertInto() method.
 
-        $this->db->query(sql: $sql);
-        $values = array("Male", "Male");
-        $this->db->insert($values);
     }
 
     public function update(string $id): void

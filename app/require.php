@@ -9,6 +9,5 @@ require_once 'Libraries/Database.php';
 require_once 'Libraries/Table.php';
 require_once 'config/config.php';
 
-
 $table = new Table();
 $init = new Core();

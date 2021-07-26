@@ -3,10 +3,18 @@
 
 class GenderModel implements Model
 {
+    private Database $db;
+
+    public function __construct()
+    {
+//        $this->db = Database::getInstance();
+    }
+
 
     public function insertInto(): void
     {
         // TODO: Implement insertInto() method.
+
     }
 
     public function update(string $id): void
@@ -24,12 +32,12 @@ class GenderModel implements Model
         // TODO: Implement getSingle() method.
     }
 
-    public function getFrom(DateTime $dateTime)
+    public function getFrom(DateTime $dateTime): void
     {
         // TODO: Implement getFrom() method.
     }
 
-    public function search($key)
+    public function search($key): void
     {
         // TODO: Implement search() method.
     }

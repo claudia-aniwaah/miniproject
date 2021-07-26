@@ -3,7 +3,7 @@
 
 class BluePrint
 {
-    private Database $db;
+    protected Database $db;
     private string $table_name;
 
     public function __construct()
@@ -54,7 +54,7 @@ class BluePrint
         return $this->db;
     }
 
-    protected function setFK(string $table_name, string $col, string $ref_table_name, string $ref_col, string $constraint_name = null): void
+    protected function setFK(string $table_name, string $col, string $ref_table_name, string $ref_col, string $constraint_name = null): BluePrint
     {
         if (is_null($constraint_name)) {
             $this->db->query(sql: "SET FOREIGN_KEY_CHECKS=0; ALTER TABLE $table_name ADD FOREIGN KEY ($col) REFERENCES $ref_table_name($ref_col) ON DELETE CASCADE ON UPDATE CASCADE; SET FOREIGN_KEY_CHECKS=1");
@@ -64,5 +64,6 @@ class BluePrint
             $this->db->query(sql: "SET FOREIGN_KEY_CHECKS=0; ALTER TABLE $table_name ADD CONSTRAINT $constraint_name FOREIGN KEY ($col) REFERENCES $ref_table_name($ref_col) ON DELETE CASCADE ON UPDATE CASCADE; SET FOREIGN_KEY_CHECKS=1");
         }
         $this->db->execute();
+        return $this;
     }
 }
