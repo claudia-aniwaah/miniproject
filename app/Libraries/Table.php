@@ -213,6 +213,11 @@ class Table extends BluePrint
         $this->db->insert($value);
     }
 
+
+
+
+
+
     private function customerTable(): void
     {
         $tableCols = array(

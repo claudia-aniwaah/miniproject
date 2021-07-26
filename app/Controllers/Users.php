@@ -4,6 +4,8 @@
 class Users extends Controller
 {
 
+    use Validation;
+
     private Model $userModel;
 
     public function __construct()
@@ -14,6 +16,7 @@ class Users extends Controller
 
     public function login(): void
     {
+        $this->testValidation();
 //        header("Location:" . URL_ROOT . "/pages/dashboard");
         $users = $this->userModel->getAll();
         $data = [
