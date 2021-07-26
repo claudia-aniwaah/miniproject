@@ -9,7 +9,11 @@ require APP_ROOT . "/Views/includes/head.php";
 
 <body>
 <?php require APP_ROOT . "/Views/includes/navigation.php" ?>
-<h1>Login</h1>
+<div>
+    <form action="<?= URL_ROOT ?>/users/login" method="POST">
+        <input type="submit" value="Submit">
+    </form>
+</div>
 </body>
 
 </html>

@@ -2,9 +2,9 @@
 
 class Core
 {
-    protected string $currentController = 'Pages';
-    protected Pages $pageInstance;
-    protected string $currentMethod = 'index';
+    protected string $currentController = 'Users';
+    protected mixed $pageInstance;
+    protected string $currentMethod = 'login';
     protected array $params = [];
 
 

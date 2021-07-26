@@ -11,16 +11,6 @@ class Pages extends Controller
         $this->userModel = $this->model("UserModel");
     }
 
-    public function index(): void
-    {
-        $users = $this->userModel->getAll();
-
-        $data = [
-            'title' => 'Login',
-            'users' => $users
-        ];
-        $this->view("pages/index", $data);
-    }
 
     public function dashboard(): void
     {
