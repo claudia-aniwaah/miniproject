@@ -16,7 +16,6 @@ class Users extends Controller
 
     public function login(): void
     {
-        $this->testValidation();
 //        header("Location:" . URL_ROOT . "/pages/dashboard");
         $users = $this->userModel->getAll();
         $data = [
