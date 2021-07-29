@@ -1,24 +1,36 @@
 <?php
 
 /** @var array $data */
+//echo $data['title'];
 
 require APP_ROOT . "/Views/includes/head.php";
 ?>
-<link rel="stylesheet" href="<?= URL_ROOT ?>/public/assets/css/login-style.css"/>
-
-<link rel="stylesheet" href="<?= URL_ROOT ?>/public/assets/css/login-style.css"/>
 <title><?= $data['title'] ?></title>
+<link rel="stylesheet" href="<?= URL_ROOT ?>/public/assets/css/login-style.css"/>
 
 </head>
 
 <body>
-<?php //require APP_ROOT . "/Views/includes/navigation.php"
-?>
-<?php require APP_ROOT . "/Views/includes/sidebar.php" ?>
 
-<form action="<?= URL_ROOT ?>/users/login" method="POST">
-    <input type="submit" value="Submit">
-</form>
+<section id="login-section-wrapper">
+
+    <div id="form-wrapper">
+        <form action="<?= URL_ROOT ?>/users/login" method="POST">
+            <label>
+                Employee ID
+                <input type="text" name="employee_id">
+            </label>
+
+            <label>
+                Password
+                <input type="password" name="employee_password">
+            </label>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </div>
+
+</section>
+
 </body>
 
 </html>

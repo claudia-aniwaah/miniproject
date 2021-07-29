@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+section#login-section-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(242, 252, 255);
+    min-height: 100vh;
+}
+
+section#login-section-wrapper > #form-wrapper {
+    flex: 0 0 40%;
+}
+
+
+section#login-section-wrapper form > label {
+    margin-bottom: 20px;
+    display: block;
+    color: #7b7a7a;
+}
+
+section#login-section-wrapper input {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    background-color: rgb(223, 242, 247);
+}
+
+section#login-section-wrapper input[type='submit'] {
+    margin-top: 40px;
+    background-color: cornflowerblue;
+    color: whitesmoke;
+}
+
+section#login-section-wrapper input[type='text'], input[type='password'] {
+
+}

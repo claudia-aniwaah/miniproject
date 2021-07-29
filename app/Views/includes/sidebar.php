@@ -1,2 +1,4 @@
+<section id="sidebar-wrapper">
 
-<p>HELLO WORLD</p>
+
+</section>

@@ -16,8 +16,10 @@ class Users extends Controller
 
     public function login(): void
     {
-//        $this->testValidation();
-//        header("Location:" . URL_ROOT . "/pages/dashboard");
+        if (isset($_POST['submit'])){
+            echo "Hello world";
+        }
+
         $users = $this->userModel->getAll();
         $data = [
             'title' => 'Login',
