@@ -16,9 +16,9 @@ class Users extends Controller
 
     public function login(): void
     {
-        if (isset($_POST['submit'])){
-            echo "Hello world";
-        }
+//        if (isset($_POST['submit'])){
+//            echo "Hello world";
+//        }
 
         $users = $this->userModel->getAll();
         $data = [
