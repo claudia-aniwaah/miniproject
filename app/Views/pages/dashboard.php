@@ -2,6 +2,11 @@
 
 /** @var array $data */
 require APP_ROOT . "/Views/includes/head.php";
+
+// if(!isset($_SESSION['logged_in_user'])){
+//     header('location:' . URL_ROOT . '/users/login');
+//     die("Unauthorized access");
+// }
 ?>
 <link rel="stylesheet" href="<?= URL_ROOT ?>/public/assets/css/dashboard-style.css" />
 <title><?= $data['title'] ?></title>
@@ -14,6 +19,63 @@ require APP_ROOT . "/Views/includes/head.php";
 
         <div id="flex-child-content">
             <h1>DASHBOARD</h1>
+
+
+            <section class="dashboard-grid">
+                <div class="grid-child">
+                    <a href="customer.php">
+                        <div class="icon-holder"><i class="fa fa-user"></i></div>
+                        <div class="desc-holder">
+                            <h3>CUSTOMER</h1>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="grid-child">
+                    <a href="supplier.php">
+                        <div class="icon-holder"><i class="fa fa-user"></i></div>
+                        <div class="desc-holder">
+                            <h3>SUPPLIER</h1>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="grid-child">
+                    <a href="staff.php">
+                        <div class="icon-holder"><i class="fa fa-user"></i></div>
+                        <div class="desc-holder">
+                            <h3>EMPLOYEES</h3>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="grid-child">
+                    <a href="product.php">
+                        <div class="icon-holder"><i class="fa fa-user"></i></div>
+                        <div class="desc-holder">
+                            <h3>PRODUCTS</h3>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="grid-child">
+                    <a href="order.php">
+                        <div class="icon-holder"><i class="fa fa-user"></i></div>
+                        <div class="desc-holder">
+                            <h3>ORDERS</h3>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="grid-child">
+                    <a href="payment.php">
+                        <div class="icon-holder"><i class="fa fa-user"></i></div>
+                        <div class="desc-holder">
+                            <h3>PAYMENT</h3>
+                        </div>
+                    </a>
+                </div>
+            </section>
 
         </div>
     </section>

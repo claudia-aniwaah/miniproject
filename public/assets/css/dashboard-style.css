@@ -1,0 +1,16 @@
+:root {
+    --grid-card: white;
+}
+
+.dashboard-grid{
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    grid-gap: 15px;
+}
+
+.dashboard-grid > .grid-child{
+   background-color: var(--grid-card);
+   text-align: center;
+   height: 200px;
+   box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}

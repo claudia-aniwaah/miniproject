@@ -16,7 +16,6 @@ class Pages extends Controller
 
     public function dashboard(): void
     {
-
         $data = [
             'title' => 'Dashboard'
         ];

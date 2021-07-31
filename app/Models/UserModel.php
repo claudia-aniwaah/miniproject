@@ -19,9 +19,10 @@ class UserModel implements Model
         return $this->db->resultSet();
     }
 
-    public function getSingle(int $id): void
+    public function getSingle(int $id): mixed
     {
-        // TODO: Implement getSingle() method.
+        $this->db->query(sql: "SELECT * FROM `staff` WHERE staff_id=$id");
+        return $this->db->getSingle();
     }
 
     public function getFrom(DateTime $dateTime): void

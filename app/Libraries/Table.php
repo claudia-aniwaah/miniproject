@@ -205,6 +205,8 @@ class Table extends BluePrint
             ->setFK(table_name: 'staff', col: 'gender_id', ref_table_name: 'gender', ref_col: 'gender_id', constraint_name: 'fk_gender')
             ->setFK(table_name: 'staff', col: 'marital_status_id', ref_table_name: 'marital_status', ref_col: 'marital_status_id', constraint_name: 'fk_marital_status');
 
+        $this->initializeAutoIncrement(410000);
+        
         $sql = "INSERT IGNORE INTO `staff`(`position_id`,`gender_id`,`marital_status_id`,`first_name`,`last_name`,`other_name`, `address`,`phone_number`, `email`,`password`)
                 VALUES( (?),(?),(?),(?),(?),(?),(?),(?),(?),(?))";
 

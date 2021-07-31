@@ -1,7 +1,7 @@
 <?php
 
 /** @var array $data */
-//echo $data['title'];
+// echo $data['login_error'];
 
 require APP_ROOT . "/Views/includes/head.php";
 ?>
@@ -24,6 +24,8 @@ require APP_ROOT . "/Views/includes/head.php";
                 <label>
                     Password
                     <input type="password" name="employee_password">
+
+                    <div style="color: red"><?= $data['login_error'] ?></div>
                 </label>
                 <input type="submit" name="submit" value="Login">
             </form>

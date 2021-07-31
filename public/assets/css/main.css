@@ -1,7 +1,22 @@
 :root {
     --main-sidebar-bg-color: brown;
     --sidebar-text-color: black;
-  }
+    --main-content-bg-color: rgb(242, 252, 255);
+}
+
+body{
+    background-color: var(--main-content-bg-color);
+}
+
+*{
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
 
 #flex-child-sidebar {
     position: fixed;
@@ -13,8 +28,9 @@
 }
 
 #flex-child-content{
+    padding: 10px;
     color: red;
-    background-color: greenyellow;
+    background-color: var(--main-content-bg-color);
     width: 80%;
     left: 20%;
     position: absolute;

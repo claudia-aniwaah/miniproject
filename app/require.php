@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'Libraries/ReadEnv.php';
 (new ReadEnv(dirname(__DIR__) . '/.env'))->load();
 //echo dirname(__DIR__) . '/.env';

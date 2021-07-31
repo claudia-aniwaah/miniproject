@@ -8,7 +8,7 @@ interface Model
 
     public function getAll(): array;
 
-    public function getSingle(int $id): void;
+    public function getSingle(int $id): mixed;
 
     public function getFrom(DateTime $dateTime);
 
