@@ -18,14 +18,14 @@ require APP_ROOT . "/Views/includes/head.php";
         <form action="<?= URL_ROOT ?>/users/login" method="POST">
             <label>
                 Employee ID
-                <input type="text" name="employee_id">
+                <input type="number" name="employee_id">
             </label>
 
             <label>
                 Password
                 <input type="password" name="employee_password">
             </label>
-            <input type="submit" name="submit" value="Submit">
+            <input type="submit" name="submit" value="Login">
         </form>
     </div>
 
