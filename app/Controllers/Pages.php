@@ -4,6 +4,8 @@
  * @property UserModel userModel
  */
 
+
+
 class Pages extends Controller
 {
     public function __construct()
@@ -14,6 +16,7 @@ class Pages extends Controller
 
     public function dashboard(): void
     {
+
         $data = [
             'title' => 'Dashboard'
         ];

@@ -23,6 +23,7 @@ class Database
         }
         return self::$instance;
     }
+    
 
     private function __construct()
     {

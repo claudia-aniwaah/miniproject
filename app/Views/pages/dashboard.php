@@ -9,11 +9,15 @@ require APP_ROOT . "/Views/includes/head.php";
 </head>
 
 <body>
-    <?php require APP_ROOT . "/Views/includes/sidebar.php" ?>
-    <div>
-        <h1>DASHBOARD</h1>
-       
-    </div>
+    <section id="dashboard-wrapper" style="display: flex;">
+        <?php require APP_ROOT . "/Views/includes/sidebar.php" ?>
+
+        <div id="flex-child-content">
+            <h1>DASHBOARD</h1>
+
+        </div>
+    </section>
+
 </body>
 
 </html>
