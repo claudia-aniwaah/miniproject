@@ -1,12 +1,11 @@
 <?php
-
+ if(!isset($_SESSION['logged_in_user'])){
+     header('location:' . URL_ROOT . '/users/login');
+     die("Unauthorized access");
+ }
 /** @var array $data */
 require APP_ROOT . "/Views/includes/head.php";
 
-// if(!isset($_SESSION['logged_in_user'])){
-//     header('location:' . URL_ROOT . '/users/login');
-//     die("Unauthorized access");
-// }
 ?>
 <link rel="stylesheet" href="<?= URL_ROOT ?>/public/assets/css/dashboard-style.css" />
 <title><?= $data['title'] ?></title>
@@ -26,7 +25,6 @@ require APP_ROOT . "/Views/includes/head.php";
                     <a href="customer.php">
                         <div class="icon-holder"><i class="fa fa-user"></i></div>
                         <div class="desc-holder">
-                            <h3>CUSTOMER</h1>
                         </div>
                     </a>
                 </div>
@@ -35,7 +33,7 @@ require APP_ROOT . "/Views/includes/head.php";
                     <a href="supplier.php">
                         <div class="icon-holder"><i class="fa fa-user"></i></div>
                         <div class="desc-holder">
-                            <h3>SUPPLIER</h1>
+                            <h3>SUPPLIER</h3>
                         </div>
                     </a>
                 </div>
