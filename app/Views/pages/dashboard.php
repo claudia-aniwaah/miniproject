@@ -11,6 +11,7 @@ require APP_ROOT . "/Views/includes/head.php";
 <body>
     <?php require APP_ROOT . "/Views/includes/sidebar.php" ?>
     <div>
+        <h1>DASHBOARD</h1>
        
     </div>
 </body>
