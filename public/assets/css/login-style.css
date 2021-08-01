@@ -1,3 +1,8 @@
+:root {
+    --login-bg-color:rgb(148, 74, 117);
+    --login-text-color: #7b7a7a;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,7 +13,7 @@ section#login-section-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(242, 252, 255);
+    background-color:  var(--login-bg-color) !important;
     min-height: 100vh;
 }
 
@@ -20,7 +25,7 @@ section#login-section-wrapper > #form-wrapper {
 section#login-section-wrapper form > label {
     margin-bottom: 20px;
     display: block;
-    color: #7b7a7a;
+    color: var(--login-text-color);
 }
 
 section#login-section-wrapper input {

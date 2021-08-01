@@ -5,8 +5,8 @@
 
 require APP_ROOT . "/Views/includes/head.php";
 ?>
-<title><?= $data['title'] ?></title>
 <link rel="stylesheet" href="<?= URL_ROOT ?>/public/assets/css/login-style.css" />
+<title><?= $data['title'] ?></title>
 
 </head>
 
@@ -15,7 +15,9 @@ require APP_ROOT . "/Views/includes/head.php";
     <section id="login-section-wrapper">
 
         <div id="form-wrapper">
+
             <form action="<?= URL_ROOT ?>/users/login" method="POST">
+
                 <label>
                     Employee ID
                     <input type="number" min='0' step='1000' name="employee_id">

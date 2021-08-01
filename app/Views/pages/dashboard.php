@@ -25,13 +25,14 @@ require APP_ROOT . "/Views/includes/head.php";
                     <a href="customer.php">
                         <div class="icon-holder"><i class="fa fa-user"></i></div>
                         <div class="desc-holder">
+                        <h3>CUSTOMER</h3>
                         </div>
                     </a>
                 </div>
 
                 <div class="grid-child">
                     <a href="supplier.php">
-                        <div class="icon-holder"><i class="fa fa-user"></i></div>
+                        <div class="icon-holder"><i class="fa fa-industry"></i></div>
                         <div class="desc-holder">
                             <h3>SUPPLIER</h3>
                         </div>
@@ -40,7 +41,7 @@ require APP_ROOT . "/Views/includes/head.php";
 
                 <div class="grid-child">
                     <a href="staff.php">
-                        <div class="icon-holder"><i class="fa fa-user"></i></div>
+                        <div class="icon-holder"><i class="fa fa-users"></i></div>
                         <div class="desc-holder">
                             <h3>EMPLOYEES</h3>
                         </div>
@@ -49,7 +50,7 @@ require APP_ROOT . "/Views/includes/head.php";
 
                 <div class="grid-child">
                     <a href="product.php">
-                        <div class="icon-holder"><i class="fa fa-user"></i></div>
+                        <div class="icon-holder"><i class="fa fa-sitemap"></i></div>
                         <div class="desc-holder">
                             <h3>PRODUCTS</h3>
                         </div>
@@ -58,7 +59,7 @@ require APP_ROOT . "/Views/includes/head.php";
 
                 <div class="grid-child">
                     <a href="order.php">
-                        <div class="icon-holder"><i class="fa fa-user"></i></div>
+                        <div class="icon-holder"><i class="fa fa-shopping-cart"></i></div>
                         <div class="desc-holder">
                             <h3>ORDERS</h3>
                         </div>
@@ -67,7 +68,7 @@ require APP_ROOT . "/Views/includes/head.php";
 
                 <div class="grid-child">
                     <a href="payment.php">
-                        <div class="icon-holder"><i class="fa fa-user"></i></div>
+                        <div class="icon-holder"><i class="fa fa-money"></i></div>
                         <div class="desc-holder">
                             <h3>PAYMENT</h3>
                         </div>
