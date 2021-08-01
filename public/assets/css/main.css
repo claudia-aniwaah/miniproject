@@ -22,9 +22,9 @@ body{
     position: fixed;
     top: 0;
     bottom: 0;
-    color: var(--sidebar-text-color);
+    color: var(--sidebar-text-color) !important;
     width: 20%;
-    background-color: var(--main-sidebar-bg-color);
+    background-color: var(--main-sidebar-bg-color) !important;
 }
 
 #flex-child-content{
@@ -34,4 +34,8 @@ body{
     width: 80%;
     left: 20%;
     position: absolute;
+}
+
+#flex-child-sidebar .side-bar-menu-link{
+    color: var(--sidebar-text-color);
 }

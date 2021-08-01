@@ -20,6 +20,7 @@ class Users extends Controller
             //VALIDATION
             $users = $this->userModel->getSingle(id: $_POST['employee_id']);
             if ($users !== false) {
+                
                 $_SESSION['logged_in_user'] = $users->staff_id;
                 header('location:' . URL_ROOT . '/pages/dashboard');
             } else {

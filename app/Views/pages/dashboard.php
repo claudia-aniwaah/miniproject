@@ -3,6 +3,8 @@
      header('location:' . URL_ROOT . '/users/login');
      die("Unauthorized access");
  }
+ echo URL_ROOT;
+
 /** @var array $data */
 require APP_ROOT . "/Views/includes/head.php";
 
