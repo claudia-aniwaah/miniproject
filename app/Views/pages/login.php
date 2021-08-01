@@ -1,5 +1,8 @@
 <?php
-
+ if(isset($_SESSION['logged_in_user'])){
+    header('location:' . URL_ROOT . '/pages/dashboard');
+    die("You are already logged in");
+}
 /** @var array $data */
 // echo $data['login_error'];
 

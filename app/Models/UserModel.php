@@ -42,6 +42,11 @@ class UserModel implements Model
 
     }
 
+    public function rowCount(): int
+    {
+        return $this->db->rowCount();
+    }
+
     public function update(string $id): void
     {
         // TODO: Implement update() method.
