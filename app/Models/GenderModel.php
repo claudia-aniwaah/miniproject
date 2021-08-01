@@ -7,7 +7,8 @@ class GenderModel implements Model
 
     public function __construct()
     {
-//        $this->db = Database::getInstance();
+        $this->db = Database::getInstance();
+        $this->insertInto();
     }
 
 
@@ -25,17 +26,25 @@ class GenderModel implements Model
     public function getAll(): array
     {
         // TODO: Implement getAll() method.
+        return [];
     }
 
-    public function getSingle(int $id): void
+    public function getSingle(int $id): mixed
     {
         // TODO: Implement getSingle() method.
+        return;
     }
 
     public function getFrom(DateTime $dateTime): void
     {
         // TODO: Implement getFrom() method.
     }
+
+    public function rowCount(): int
+    {
+        return $this->db->rowCount();
+    }
+
 
     public function search($key): void
     {
