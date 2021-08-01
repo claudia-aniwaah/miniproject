@@ -6,7 +6,7 @@ class Users extends Controller
 
     use Validation;
 
-    private UserModel $userModel;
+    private Model $userModel;
 
     public function __construct()
     {

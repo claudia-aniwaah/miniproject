@@ -8,6 +8,8 @@ interface Model
 
     public function getAll(): array;
 
+    public function rowCount(): int;
+
     public function getSingle(int $id): mixed;
 
     public function getFrom(DateTime $dateTime);
