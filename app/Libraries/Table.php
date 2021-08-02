@@ -18,7 +18,6 @@ class Table extends BluePrint
         $this->orderTable();
         $this->paymentTable();
         $this->order_detailsTable();
-
     }
 
     /*
@@ -206,7 +205,7 @@ class Table extends BluePrint
             ->setFK(table_name: 'staff', col: 'marital_status_id', ref_table_name: 'marital_status', ref_col: 'marital_status_id', constraint_name: 'fk_marital_status');
 
         $this->initializeAutoIncrement(410000);
-        
+
         $sql = "INSERT IGNORE INTO `staff`(`position_id`,`gender_id`,`marital_status_id`,`first_name`,`last_name`,`other_name`, `address`,`phone_number`, `email`,`password`)
                 VALUES( (?),(?),(?),(?),(?),(?),(?),(?),(?),(?))";
 
@@ -271,6 +270,14 @@ class Table extends BluePrint
             "updated_at" => "DATETIME ON UPDATE CURRENT_TIMESTAMP"
         );
         $this->createTable(table_name: 'supplier', table_params: $tableCols);
+
+
+        // $sql = "INSERT IGNORE INTO `supplier`(`supplier_name`,`address`,`phone_number`,`email`,`supplier_desc`,`fax`)
+        // VALUES( (?),(?),(?),(?),(?),(?))";
+
+        // $this->db->query(sql: $sql);
+        // $value = array("Supplier test name", "Supplier address", "05434354533", "supplier@gmail.com", "Test supplier description",  "SOME fax");
+        // $this->db->insert($value);
     }
 
 
@@ -291,6 +298,15 @@ class Table extends BluePrint
         $this->createTable(table_name: 'product', table_params: $tableCols)
             ->setFK(table_name: 'product', col: 'category_id', ref_table_name: 'category', ref_col: 'category_id', constraint_name: 'fk_category')
             ->setFK(table_name: 'product', col: 'supplier_id', ref_table_name: 'supplier', ref_col: 'supplier_id', constraint_name: 'fk_supplier');
+    
+    
+            // $sql = "INSERT IGNORE INTO `product`(`product_name`,`category_id`,`supplier_id`,`brand_name`,`price`,`quantity`, `status`)
+            // VALUES( (?),(?),(?),(?),(?),(?),(?) )";
+    
+            // $this->db->query(sql: $sql);
+            // $value = array("Product test name", 1, 1, "Product brand name", 34.43,  3, 'test status');
+            // $this->db->insert($value);
+
     }
 
 
@@ -336,11 +352,9 @@ class Table extends BluePrint
             "quantity" =>  "INT NOT NULL",
             "total" =>  "DECIMAL(13,2) NOT NULL",
             "bill_number" =>  "INT"
-         );
+        );
         $this->createTable(table_name: 'order_details', table_params: $tableCols)
             ->setFK(table_name: 'order_details', col: 'product_id', ref_table_name: 'product', ref_col: 'product_id', constraint_name: 'fk_product')
             ->setFK(table_name: 'order_details', col: 'order_id', ref_table_name: 'order', ref_col: 'order_id', constraint_name: 'fk_order');
     }
-
-
 }

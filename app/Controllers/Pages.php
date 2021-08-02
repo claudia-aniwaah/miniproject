@@ -10,7 +10,7 @@ class Pages extends Controller
 {
     public function __construct()
     {
-        $this->userModel = $this->model("UserModel");
+        // $this->userModel = $this->model("UserModel");
     }
 
 
@@ -20,5 +20,24 @@ class Pages extends Controller
             'title' => 'Dashboard'
         ];
         $this->view("pages/dashboard", $data);
+    }
+
+
+    public function suppliers(): void
+    {
+        $data = [
+            'title' => 'SUPPLIERS'
+        ];
+        $this->view("pages/suppliers", $data);
+    }
+
+
+
+    public function products(): void
+    {
+        $data = [
+            'title' => 'PRODUCTS'
+        ];
+        $this->view("pages/products", $data);
     }
 }

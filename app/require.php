@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+// unset($_SESSION['logged_in_user']);
+
 require_once 'Libraries/ReadEnv.php';
 (new ReadEnv(dirname(__DIR__) . '/.env'))->load();
 //echo dirname(__DIR__) . '/.env';

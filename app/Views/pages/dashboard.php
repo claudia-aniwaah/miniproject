@@ -3,7 +3,6 @@
      header('location:' . URL_ROOT . '/users/login');
      die("Unauthorized access");
  }
- echo URL_ROOT;
 
 /** @var array $data */
 require APP_ROOT . "/Views/includes/head.php";
@@ -19,7 +18,7 @@ require APP_ROOT . "/Views/includes/head.php";
         <?php require APP_ROOT . "/Views/includes/sidebar.php" ?>
 
         <div id="flex-child-content">
-            <h1>DASHBOARD</h1>
+            <h1 class="page-header">DASHBOARD</h1>
 
 
             <section class="dashboard-grid">

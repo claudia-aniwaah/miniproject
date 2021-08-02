@@ -2,6 +2,7 @@
     --main-sidebar-bg-color:#323232;
     --sidebar-text-color: blue;
     --main-content-bg-color: rgb(242, 252, 255);
+    --page-header-text-color: #444;
 }
 
 body{
@@ -38,4 +39,8 @@ body{
 
 #flex-child-sidebar .side-bar-menu-link{
     color: var(--sidebar-text-color);
+}
+
+.page-header{
+    color: var(--page-header-text-color);
 }
