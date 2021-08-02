@@ -1,9 +1,9 @@
 <?php
+require_once 'interfaces/Model.php';
 
 
-class MaritalStatusModel implements Model
+class SuppliersModel implements Model
 {
-
 
     private Database $db;
 
@@ -24,8 +24,9 @@ class MaritalStatusModel implements Model
 
     public function getAll(): array
     {
-        // TODO: Implement getAll() method.
-        return [];
+        $this->db->query(sql: "SELECT * FROM `supplier`");
+        return $this->db->resultSet();
+        
     }
 
     public function getSingle(int $id): mixed

@@ -1,9 +1,9 @@
 <?php
+require_once 'interfaces/Model.php';
 
 
-class MaritalStatusModel implements Model
+class ProductsModel implements Model
 {
-
 
     private Database $db;
 

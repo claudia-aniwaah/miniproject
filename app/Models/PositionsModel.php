@@ -9,7 +9,6 @@ class PositionsModel implements Model
     public function __construct()
     {
         $this->db = Database::getInstance();
-        $this->insertInto();
     }
 
     public function insertInto(): void

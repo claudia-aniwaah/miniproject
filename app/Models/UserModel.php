@@ -15,7 +15,7 @@ class UserModel implements Model
 
     public function getAll(): array
     {
-        $this->db->query(sql: "SELECT * FROM `gender`");
+        $this->db->query(sql: "SELECT * FROM `staff`");
         return $this->db->resultSet();
     }
 

@@ -9,6 +9,10 @@ body{
     background-color: var(--main-content-bg-color);
 }
 
+table{
+    color: #444;
+}
+
 *{
     text-decoration: none;
     list-style: none;
@@ -44,3 +48,4 @@ body{
 .page-header{
     color: var(--page-header-text-color);
 }
+

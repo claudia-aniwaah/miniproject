@@ -8,7 +8,6 @@ class GenderModel implements Model
     public function __construct()
     {
         $this->db = Database::getInstance();
-        $this->insertInto();
     }
 
 

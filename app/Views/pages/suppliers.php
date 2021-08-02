@@ -3,12 +3,11 @@ if (!isset($_SESSION['logged_in_user'])) {
     header('location:' . URL_ROOT . '/users/login');
     die("Unauthorized access");
 }
-echo URL_ROOT;
 
 /** @var array $data */
 require APP_ROOT . "/Views/includes/head.php";
-
 ?>
+
 <link rel="stylesheet" href="<?= URL_ROOT ?>/public/assets/css/supplier-style.css" />
 <title><?= $data['title'] ?></title>
 
@@ -24,36 +23,41 @@ require APP_ROOT . "/Views/includes/head.php";
 
             <div class="supplier-table-wrapper">
 
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <?php if (count($data) === 0) : ?>
+                    <h1 style="color:#c7c7c7; text-align: center; line-height: 350px;">No Data</h1>
+                <?php else : ?>
+
+                    <table class="table">
+                        <thead>
+
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Supplier Name</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Phone Number</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Fax</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <?php foreach ($data['suppliers'] as $supplier) : ?>
+                                <tr>
+                                    <th scope="row"><?= $supplier->supplier_id ?></th>
+                                    <td><?= $supplier->supplier_name ?></td>
+                                    <td><?= $supplier->address ?></td>
+                                    <td><?= $supplier->phone_number ?></td>
+                                    <td><?= $supplier->email ?></td>
+                                    <td><?= $supplier->fax ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+
+                        </tbody>
+                    </table>
+
+
+                <?php endif; ?>
+
 
             </div>
 

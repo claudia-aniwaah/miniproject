@@ -1,16 +1,19 @@
 <?php
 
-/**
- * @property UserModel userModel
- */
 
 
 
 class Pages extends Controller
 {
+
+    private Model $productModel;
+    private Model $supplierModel;
+
+
     public function __construct()
     {
-        // $this->userModel = $this->model("UserModel");
+        $this->productModel = $this->model("ProductsModel");
+        $this->supplierModel = $this->model("SuppliersModel");
     }
 
 
@@ -25,8 +28,11 @@ class Pages extends Controller
 
     public function suppliers(): void
     {
+        $suppliers = $this->supplierModel->getAll();
+
         $data = [
-            'title' => 'SUPPLIERS'
+            'title' => 'Suppliers',
+            'suppliers' => $suppliers
         ];
         $this->view("pages/suppliers", $data);
     }
