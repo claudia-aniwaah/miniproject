@@ -1,8 +1,6 @@
 <?php
 
 
-
-
 class Pages extends Controller
 {
 
@@ -38,11 +36,12 @@ class Pages extends Controller
     }
 
 
-
     public function products(): void
     {
+        $products = $this->productModel->getAll();
         $data = [
-            'title' => 'PRODUCTS'
+            'title' => 'PRODUCTS',
+            'products' => $products
         ];
         $this->view("pages/products", $data);
     }
