@@ -18,7 +18,7 @@ require APP_ROOT . "/Views/includes/head.php";
         <?php require APP_ROOT . "/Views/includes/sidebar.php" ?>
 
         <div id="flex-child-content">
-            <h1 class="page-header">DASHBOARD</h1>
+            <h1 class="page-header"><i class="fa fa-navicon"></i>&nbsp;DASHBOARD</h1>
 
 
             <section class="dashboard-grid">
@@ -73,6 +73,20 @@ require APP_ROOT . "/Views/includes/head.php";
                         <div class="desc-holder">
                             <h3>PAYMENT</h3>
                         </div>
+                    </a>
+                </div>
+                <div class="grid-child">
+                    <a href="editProfile.php">
+                        <div class="icon-holder"><i class="fa fa-info-circle"></i></div>
+                        <div class="desc-holder">
+                            <h3>ORDER DETAILS</h3></div>
+                    </a>
+                </div>
+                <div class="grid-child">
+                    <a href="editProfile.php">
+                        <div class="icon-holder"><i class="fa fa-pencil-square-o"></i></div>
+                        <div class="desc-holder">
+                            <h3>EDIT PROFILE</h3></div>  
                     </a>
                 </div>
             </section>
