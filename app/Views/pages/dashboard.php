@@ -65,6 +65,22 @@ require APP_ROOT . "/Views/includes/head.php";
                     </div>
                 </a>
             </div>
+            <div class="grid-child">
+                <a href="order.php">
+                    <div class="icon-holder"><i class="fa fa-pencil-square-o"></i></div>
+                    <div class="desc-holder">
+                        <h3>ORDER DETAILS</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-child">
+                <a href="order.php">
+                    <div class="icon-holder"><i class="fa fa-info-circle"></i></div>
+                    <div class="desc-holder">
+                        <h3>EDIT PROFILE</h3>
+                    </div>
+                </a>
+            </div>
 
             <div class="grid-child">
                 <a href="payment.php">

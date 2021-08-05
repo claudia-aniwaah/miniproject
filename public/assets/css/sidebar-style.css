@@ -1,9 +1,80 @@
 
 
-ul.dashboard-menu-lists-wrapper {
-    background: red !important;
-    margin-top: 40px;
+div.dashboard_sidebar{
+	
+	background:#323232;
+	
 }
+
+h3.dashboard_logo{
+	color:#f685a1;
+	font-size:40px;	
+	text-align:center; 
+	margin-top:3px;	
+	}
+
+	.dashboard_sidebar_user img {
+		border-radius:50%;
+		margin-top:-30px;
+		border:2px solid #323232;
+		display:inline-block;
+		margin-left:90px;
+		width:90px;
+	}
+	.dashboard_sidebar_user span{
+		color:white;
+		font-size:17px;
+		text-align:right;
+		width:10px;
+		top:20%;
+		text-transform:uppercase;
+		margin-left:170px;
+		margin-bottom:140px;
+	}
+
+	.dashboard_sidebar_user{
+		position:relative;
+		border-bottom:1px solid #fff;
+		padding-bottom:20px;
+		
+	}
+
+	.dashboard_sidebar_menus li{
+		padding:7px 70px;
+		font-size:15px;
+		text-transform:uppercase;
+		list-style-type:none;
+	}
+
+	.dashboard_sidebar_menus li a:hover{
+		background: #111;
+		color:#f685a1;
+   }
+
+   p.change-pass {
+    background: rgb(255, 52, 52);
+    color: #eee;
+    width: 40%;
+    margin: auto;
+	padding-right:30px;
+    text-align: center;
+    font-size: 12px;
+    font-family: sans-serif;
+    word-spacing: 2px;
+    margin-top: 50px;
+    border: 1px solid #323232;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.change-pass:active{
+	transform: scale(0.99);
+   }
+   
+   
+   .change-pass:hover{
+	   background: red;
+   }
 
 /*.dashboard-menu-lists-wrapper a {*/
 /*    text-decoration: none !important;*/
