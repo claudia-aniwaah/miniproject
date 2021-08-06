@@ -10,19 +10,22 @@
         <div class="dashboard_sidebar_menus">
             <ul class="dashboard-menu-lists-wrapper">
                 <li>
-                    <a class="side-bar-menu-link" href="<?= URL_ROOT ?>/pages/dashboard"><i class="fa fa-dashboard"></i>Dashboard</a>
+                    <a class="side-bar-menu-link" href="<?= URL_ROOT ?>/pages/dashboard"><i class="fa fa-dashboard"></i>
+                        Dashboard</a>
                 </li>
-                <li><a class="side-bar-menu-link" href="editProfile.html"><i class="fa fa-user"></i>Edit Profile</a>
+                <li><a class="side-bar-menu-link" href="editProfile.html"><i class="fa fa-user"></i> Edit Profile</a>
                 </li>
-                <li><a class="side-bar-menu-link" href="<?= URL_ROOT ?>/pages/suppliers"><i class="fa fa-group"></i>Suppliers</a>
+                <li><a class="side-bar-menu-link" href="<?= URL_ROOT ?>/pages/suppliers"><i class="fa fa-group"></i>
+                        Suppliers</a>
                 </li>
-                <li><a class="side-bar-menu-link" href="employee.html"><i class="fa fa-users"></i>Employees</a>
+                <li><a class="side-bar-menu-link" href="employee.html"><i class="fa fa-users"></i> Employees</a>
                 </li>
-                <li><a class="side-bar-menu-link" href="<?= URL_ROOT ?>/pages/products"><i class="fa fa-sitemap"></i>Products</a><br/>
+                <li><a class="side-bar-menu-link" href="<?= URL_ROOT ?>/pages/products"><i class="fa fa-sitemap"></i>
+                        Products</a><br/>
                 </li>
-                <li><a class="side-bar-menu-link" href="order.html"><i class="fa fa-shopping-cart"></i>Orders</a>
+                <li><a class="side-bar-menu-link" href="order.html"><i class="fa fa-shopping-cart"></i> Orders</a>
                 </li>
-                <li><a class="side-bar-menu-link" href="payment.html"><i class="fa fa-money"></i>Payment</a></li>
+                <li><a class="side-bar-menu-link" href="payment.html"><i class="fa fa-money"></i> Payment</a></li>
             </ul>
 
             <p class="change-pass"><i class="fa fa-key"></i>CHANGE PASSWORD</p>

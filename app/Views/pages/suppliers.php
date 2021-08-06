@@ -23,7 +23,7 @@ require APP_ROOT . "/Views/includes/head.php";
 
         <div class="supplier-table-wrapper">
 
-            <?php if (count($data) === 0) : ?>
+            <?php if (count($data['suppliers']) <= 0) : ?>
                 <h1 style="color:#c7c7c7; text-align: center; line-height: 350px;">No Data</h1>
             <?php else : ?>
 
