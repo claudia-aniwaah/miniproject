@@ -45,4 +45,63 @@ class Pages extends Controller
         ];
         $this->view("pages/products", $data);
     }
+
+
+    // public function employees(): void
+    // {
+    //     $products = $this->employeeModel->getAll();
+    //     $data = [
+    //         'title' => 'EMPLOYEES',
+    //         'employees' => $employees
+    //     ];
+    //     $this->view("pages/employees", $data);
+    // }
+
+
+
+    // public function products(): void
+    // {
+    //     $products = $this->productModel->getAll();
+    //     $data = [
+    //         'title' => 'PRODUCTS',
+    //         'products' => $products
+    //     ];
+    //     $this->view("pages/products", $data);
+    // }
+    // public function products(): void
+    // {
+    //     $products = $this->productModel->getAll();
+    //     $data = [
+    //         'title' => 'PRODUCTS',
+    //         'products' => $products
+    //     ];
+    //     $this->view("pages/products", $data);
+    // }
+    // public function products(): void
+    // {
+    //     $products = $this->productModel->getAll();
+    //     $data = [
+    //         'title' => 'PRODUCTS',
+    //         'products' => $products
+    //     ];
+    //     $this->view("pages/products", $data);
+    // }
+    // public function products(): void
+    // {
+    //     $products = $this->productModel->getAll();
+    //     $data = [
+    //         'title' => 'PRODUCTS',
+    //         'products' => $products
+    //     ];
+    //     $this->view("pages/products", $data);
+    // }
+    // public function products(): void
+    // {
+    //     $products = $this->productModel->getAll();
+    //     $data = [
+    //         'title' => 'PRODUCTS',
+    //         'products' => $products
+    //     ];
+    //     $this->view("pages/products", $data);
+    // }
 }
