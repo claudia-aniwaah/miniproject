@@ -36,7 +36,6 @@ require APP_ROOT . "/Views/includes/head.php";
                         <th scope="col">Supplier</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Price</th>
-
                     </tr>
                     </thead>
                     <tbody>
