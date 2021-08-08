@@ -24,8 +24,13 @@ class ProductsModel implements Model
 
     public function getAll(): array
     {
-        // TODO: Implement getAll() method.
-        return [];
+        $sql = "SELECT * FROM `product` 
+                INNER JOIN `category` ON product.category_id = category.category_id 
+                INNER JOIN `supplier` ON product.supplier_id = supplier.supplier_id
+                ORDER BY product.product_id";
+
+        $this->db->query(sql: $sql);
+        return $this->db->resultSet();
     }
 
     public function getSingle(int $id): mixed

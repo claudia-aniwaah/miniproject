@@ -39,6 +39,7 @@ class Pages extends Controller
     public function products(): void
     {
         $products = $this->productModel->getAll();
+
         $data = [
             'title' => 'PRODUCTS',
             'products' => $products
