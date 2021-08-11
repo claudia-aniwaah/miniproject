@@ -20,7 +20,7 @@ require APP_ROOT . "/Views/includes/head.php";
         <div id="form-wrapper">
 
             <form action="<?= URL_ROOT ?>/users/login" method="POST">
-               <H4><center>CAG INVENTORY SYSTEM</center></H4>
+               <h4><center>CAG INVENTORY SYSTEM</center></h4>
                 <label>
                     Employee ID
                     <input type="number" min='0' step='1000' name="employee_id">

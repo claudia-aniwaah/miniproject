@@ -18,8 +18,10 @@ require APP_ROOT . "/Views/includes/head.php";
     <?php require APP_ROOT . "/Views/includes/sidebar.php" ?>
 
     <div id="flex-child-content">
-        <h1 class="page-header">SUPPLIERS</h1>
-
+        <div>
+            <h1 class="page-header">SUPPLIERS</h1>
+            <a href="<?= URL_ROOT ?>/pages/add_supplier">Add Supplier</a>
+        </div>
 
         <div class="supplier-table-wrapper">
 

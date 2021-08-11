@@ -17,7 +17,11 @@ require APP_ROOT . "/Views/includes/head.php";
     <?php require APP_ROOT . "/Views/includes/sidebar.php" ?>
 
     <div id="flex-child-content">
-        <h1 class="page-header">PRODUCTS</h1>
+
+        <div>
+            <h1 class="page-header">PRODUCTS</h1>
+            <a href="<?= URL_ROOT ?>/pages/add_product">Add product</a>
+        </div>
 
 
         <div class="product-table-wrapper">

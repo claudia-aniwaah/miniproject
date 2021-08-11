@@ -39,6 +39,8 @@ class UserModel implements Model
     public function insertInto(): void
     {
         // TODO: Implement insertInto() method.
+//        $this->db->query(sql: "SELECT * FROM `staff` WHERE staff_id=$id");
+//        $this->db->insert();
 
     }
 

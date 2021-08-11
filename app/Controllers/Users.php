@@ -47,4 +47,13 @@ class Users extends Controller
         ];
         $this->view("pages/login", $data);
     }
+
+
+    public function add_user(): void
+    {
+        $data = [
+            'title' => 'PRODUCTS',
+        ];
+        $this->view("pages/add_user", $data);
+    }
 }

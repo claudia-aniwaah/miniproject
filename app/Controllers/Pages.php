@@ -48,61 +48,25 @@ class Pages extends Controller
     }
 
 
-    // public function employees(): void
-    // {
-    //     $products = $this->employeeModel->getAll();
-    //     $data = [
-    //         'title' => 'EMPLOYEES',
-    //         'employees' => $employees
-    //     ];
-    //     $this->view("pages/employees", $data);
-    // }
+    public function add_product(): void
+    {
+        if (isset($_POST['add-product'])) {
+            var_dump($_POST);
+        }
+
+        $data = [
+            'title' => 'ADD PRODUCTS',
+        ];
+        $this->view("pages/add_product", $data);
+    }
+
+    public function add_supplier(): void
+    {
+        $data = [
+            'title' => 'ADD SUPPLIER',
+        ];
+        $this->view("pages/add_supplier", $data);
+    }
 
 
-
-    // public function products(): void
-    // {
-    //     $products = $this->productModel->getAll();
-    //     $data = [
-    //         'title' => 'PRODUCTS',
-    //         'products' => $products
-    //     ];
-    //     $this->view("pages/products", $data);
-    // }
-    // public function products(): void
-    // {
-    //     $products = $this->productModel->getAll();
-    //     $data = [
-    //         'title' => 'PRODUCTS',
-    //         'products' => $products
-    //     ];
-    //     $this->view("pages/products", $data);
-    // }
-    // public function products(): void
-    // {
-    //     $products = $this->productModel->getAll();
-    //     $data = [
-    //         'title' => 'PRODUCTS',
-    //         'products' => $products
-    //     ];
-    //     $this->view("pages/products", $data);
-    // }
-    // public function products(): void
-    // {
-    //     $products = $this->productModel->getAll();
-    //     $data = [
-    //         'title' => 'PRODUCTS',
-    //         'products' => $products
-    //     ];
-    //     $this->view("pages/products", $data);
-    // }
-    // public function products(): void
-    // {
-    //     $products = $this->productModel->getAll();
-    //     $data = [
-    //         'title' => 'PRODUCTS',
-    //         'products' => $products
-    //     ];
-    //     $this->view("pages/products", $data);
-    // }
 }

@@ -1,23 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/productform.css">
-    <link rel="stylesheet" href="productform.css" style type="text/css"/>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/script.js"></script>
-    <title>ADD A PRODUCT</title>
+<?php
+if (!isset($_SESSION['logged_in_user'])) {
+    header('location:' . URL_ROOT . '/users/login');
+    die("You are already logged in");
+}
+/** @var array $data */
+
+require APP_ROOT . "/Views/includes/head.php";
+?>
+<link rel="stylesheet" href="<?= URL_ROOT ?>/public/assets/css/add-product-style.css"/>
+<title><?= $data['title'] ?></title>
 </head>
+
 <body>
 
-
-<section id="login-section-wrapper">
+<section id="add-product-section-wrapper">
 
     <div id="form-wrapper">
-        <H3>Add Product</H3>
-        <form action="" method="POST">
+        <h3>Add Product</h3>
+        <form action="<?= URL_ROOT ?>/pages/add_product" method="POST">
 
             <label>
                 <input type="text" name="Product Name" placeholder="Product Name">
@@ -53,12 +53,13 @@
             </label>
 
             <label>
-                <input type="submit" name="submit" value="Add Product">
+                <input type="submit" name="add-product" value="Add Product">
             </label>
 
 
         </form>
     </div>
+
 
 </section>
 
