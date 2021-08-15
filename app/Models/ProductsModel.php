@@ -14,12 +14,16 @@ class ProductsModel implements Model
 
     public function insertInto(): void
     {
-        // TODO: Implement insertInto() method.
+//        $sql = "INSERT INTO `product`(`product_name`,`category_id`,`supplier_id`,`brand_name`,`price`,`quantity`, `status`) VALUES(?,?,?,?,?,?,?)";
+//        $this->db->query(sql: $sql);
+//        $value = array(implode(",", $values));
+//        $this->db->insert($value);
     }
 
-    public function update(string $id): void
+    public function update(string $id): bool
     {
         // TODO: Implement update() method.
+        return false;
     }
 
     public function getAll(): array
@@ -52,5 +56,16 @@ class ProductsModel implements Model
     public function search($key)
     {
         // TODO: Implement search() method.
+    }
+
+    public function insert(array $values): bool
+    {
+        $sql = "INSERT INTO `product`(`product_name`,`category_id`,`supplier_id`,`brand_name`,`price`,`quantity`, `status`) VALUES(?,?,?,?,?,?,?)";
+        $this->db->query(sql: $sql);
+        if ($this->db->insert($values)) {
+            return true;
+        }
+        return false;
+
     }
 }

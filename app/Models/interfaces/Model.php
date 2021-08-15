@@ -2,9 +2,13 @@
 
 interface Model
 {
-    public function insertInto(): void;
+//    public function insertInto(array $values): void;
 
-    public function update(string $id): void;
+//    public function insertInto(): void;
+
+    public function insert(array $values): bool;
+
+    public function update(string $id): bool;
 
     public function getAll(): array;
 

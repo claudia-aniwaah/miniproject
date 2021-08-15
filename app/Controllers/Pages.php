@@ -51,7 +51,19 @@ class Pages extends Controller
     public function add_product(): void
     {
         if (isset($_POST['add-product'])) {
-            var_dump($_POST);
+            $product_name = $_POST['product_name'];
+            $category_id = $_POST['category_id'];
+            $supplier_id = $_POST['supplier_id'];
+            $brand_name = $_POST['brand_name'];
+            $price = $_POST['price'];
+            $quantity = $_POST['quantity'];
+            $status = $_POST['status'];
+
+            $products = $this->productModel->insert(array($product_name, $category_id, $supplier_id, $brand_name, $price, $quantity, $status));
+            if ($products) {
+                echo "Data saved successfully";
+            }
+
         }
 
         $data = [

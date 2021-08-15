@@ -20,19 +20,19 @@ require APP_ROOT . "/Views/includes/head.php";
         <form action="<?= URL_ROOT ?>/pages/add_product" method="POST">
 
             <label>
-                <input type="text" name="Product Name" placeholder="Product Name">
+                <input type="text" name="product_name" placeholder="Product Name">
+            </label>
+
+<!--            <label>-->
+<!--                <input type="number" name="product_id" placeholder="Product ID">-->
+<!--            </label>-->
+
+            <label>
+                <input type="number" name="category_id" placeholder="Category ID">
             </label>
 
             <label>
-                <input type="number" min='0' step='1000' name="product_id" placeholder="Product ID">
-            </label>
-
-            <label>
-                <input type="number" min='0' step='1000' name="category_id" placeholder="Category ID">
-            </label>
-
-            <label>
-                <input type="number" min='0' step='1000' name="supplier_id" placeholder="Supplier ID">
+                <input type="number" name="supplier_id" placeholder="Supplier ID">
             </label>
 
             <label>
@@ -40,12 +40,12 @@ require APP_ROOT . "/Views/includes/head.php";
             </label>
 
             <label>
-                <input type="number" min='0' step='1' name="price" placeholder="Price">
+                <input type="text" name="price" placeholder="Price">
 
             </label>
 
             <label>
-                <input type="number" min='0' step='1' name="quantity" placeholder="Quantity">
+                <input type="text" name="quantity" placeholder="Quantity">
             </label>
 
             <label>

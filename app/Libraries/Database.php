@@ -23,7 +23,7 @@ class Database
         }
         return self::$instance;
     }
-    
+
 
     private function __construct()
     {
@@ -81,9 +81,12 @@ class Database
         return $this->statement->fetch(PDO::FETCH_OBJ);
     }
 
-    public function insert(array $values): void
+    public function insert(array $values): bool
     {
-        $this->statement->execute($values);
+        if ($this->statement->execute($values)) {
+            return true;
+        }
+        return false;
     }
 
     public function rowCount(): int

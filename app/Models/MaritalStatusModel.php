@@ -17,9 +17,10 @@ class MaritalStatusModel implements Model
         // TODO: Implement insertInto() method.
     }
 
-    public function update(string $id): void
+    public function update(string $id): bool
     {
         // TODO: Implement update() method.
+        return false;
     }
 
     public function getAll(): array
@@ -47,5 +48,11 @@ class MaritalStatusModel implements Model
     public function search($key)
     {
         // TODO: Implement search() method.
+    }
+
+    public function insert(array $values): bool
+    {
+        // TODO: Implement insert() method.
+        return false;
     }
 }
