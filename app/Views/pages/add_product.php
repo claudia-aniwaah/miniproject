@@ -20,7 +20,7 @@ require APP_ROOT . "/Views/includes/head.php";
         <form action="<?= URL_ROOT ?>/pages/add_product" method="POST">
 
             <label>
-                <input type="text" name="Product Name" placeholder="Product Name">
+                <input type="text" name="product_name" placeholder="Product Name">
             </label>
 
             <label>
@@ -53,7 +53,7 @@ require APP_ROOT . "/Views/includes/head.php";
             </label>
 
             <label>
-                <input type="submit" name="add-product" value="Add Product">
+                <input type="submit" name="add_product" value="Add Product">
             </label>
 
 

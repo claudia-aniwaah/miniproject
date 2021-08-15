@@ -29,8 +29,9 @@ require APP_ROOT . "/Views/includes/head.php";
             </label>
 
             <label>
-                <input type="number" min='0' step='1000' name="category_id" placeholder="Category ID">
+                <input type="number" min ="0"name="phone" placeholder="Phone">
             </label>
+
 
             <label>
                 <input type="text" name="address" placeholder="Address">
@@ -42,10 +43,6 @@ require APP_ROOT . "/Views/includes/head.php";
 
             <label>
                 <input type="email" name="email" placeholder="Email">
-            </label>
-
-            <label>
-                <input type="text" name="Status" placeholder="Status">
             </label>
 
             <label>
