@@ -81,7 +81,6 @@ class Pages extends Controller
             $email = $_POST['email'];
             $supplier_desc = $_POST['supplier_desc'];
             $fax = $_POST['fax'];
-            echo $supplier_desc;
 
             $supplier = $this->supplierModel->insert(array($supplier_name, $address, $phone_number, $email, $supplier_desc, $fax));
             if ($supplier) {
