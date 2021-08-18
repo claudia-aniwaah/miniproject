@@ -10,7 +10,7 @@ form {
 
 section#add-product-section-wrapper input {
     display: block !important;
-    width: 465px;
+    width: 85%;
     margin-top: 5px;
     border-radius: 5px;
     font-weight: lighter;
@@ -19,6 +19,7 @@ section#add-product-section-wrapper input {
     border: none;
     background-color: rgb(223, 242, 247);
 }
+
 
 section#add-product-section-wrapper input[type='submit'] {
     margin-top: 20px;

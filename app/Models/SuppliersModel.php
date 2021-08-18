@@ -23,7 +23,6 @@ class SuppliersModel implements Model
     {
         $this->db->query(sql: "SELECT * FROM `supplier`");
         return $this->db->resultSet();
-
     }
 
     public function getSingle(int $id): mixed

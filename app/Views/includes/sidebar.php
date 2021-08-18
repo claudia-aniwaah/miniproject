@@ -1,10 +1,10 @@
 <section id="flex-child-sidebar">
     <div class="dashboard_sidebar">
-        <h3 class="dashboard_logo">C.I.S</h3><br/>
+        <h3 class="dashboard_logo">C.I.S</h3><br />
 
         <div class="dashboard_sidebar_user">
-            <img src="style.jpg" alt="image" width="100px" height="100px" class="center"/>
-            <span> CLAUDIA</span>
+            <img src="<?= URL_ROOT ?>/public/assets/images/style.jpg" alt="image" width="100px" height="100px" class="center" />
+            <!-- <span>CLAUDIA</span> -->
         </div>
 
         <div class="dashboard_sidebar_menus">
@@ -21,7 +21,7 @@
                 <li><a class="side-bar-menu-link" href="employee.html"><i class="fa fa-users"></i> Employees</a>
                 </li>
                 <li><a class="side-bar-menu-link" href="<?= URL_ROOT ?>/pages/products"><i class="fa fa-sitemap"></i>
-                        Products</a><br/>
+                        Products</a><br />
                 </li>
                 <li><a class="side-bar-menu-link" href="order.html"><i class="fa fa-shopping-cart"></i> Orders</a>
                 </li>
