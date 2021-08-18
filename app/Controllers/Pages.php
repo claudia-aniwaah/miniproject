@@ -6,12 +6,14 @@ class Pages extends Controller
 
     private Model $productModel;
     private Model $supplierModel;
+    private Model $categoryModel;
 
 
     public function __construct()
     {
         $this->productModel = $this->model("ProductsModel");
         $this->supplierModel = $this->model("SuppliersModel");
+        $this->categoryModel = $this->model("CategoryModel");
     }
 
 
@@ -63,11 +65,12 @@ class Pages extends Controller
             if ($products) {
                 echo "Data saved successfully";
             }
-
         }
 
         $data = [
             'title' => 'ADD PRODUCTS',
+            'suppliers' =>  $this->supplierModel->getAll(),
+            'categories' =>  $this->categoryModel->getAll()
         ];
         $this->view("pages/add_product", $data);
     }
@@ -94,6 +97,4 @@ class Pages extends Controller
         ];
         $this->view("pages/add_supplier", $data);
     }
-
-
 }
