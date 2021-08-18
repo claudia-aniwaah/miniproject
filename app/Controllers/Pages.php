@@ -52,7 +52,7 @@ class Pages extends Controller
 
     public function add_product(): void
     {
-        if (isset($_POST['add-product'])) {
+        if (isset($_POST['add_product'])) {
             $product_name = $_POST['product_name'];
             $category_id = $_POST['category_id'];
             $supplier_id = $_POST['supplier_id'];
@@ -63,7 +63,7 @@ class Pages extends Controller
 
             $products = $this->productModel->insert(array($product_name, $category_id, $supplier_id, $brand_name, $price, $quantity, $status));
             if ($products) {
-                echo "Data saved successfully";
+                header("location:".URL_ROOT."/pages/products");
             }
         }
 
@@ -87,8 +87,7 @@ class Pages extends Controller
 
             $supplier = $this->supplierModel->insert(array($supplier_name, $address, $phone_number, $email, $supplier_desc, $fax));
             if ($supplier) {
-                echo "Data saved successfully";
-            }
+                header("location:".URL_ROOT."/pages/suppliers");            }
         }
 
 

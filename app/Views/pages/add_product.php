@@ -4,7 +4,7 @@ if (!isset($_SESSION['logged_in_user'])) {
     die("You are already logged in");
 }
 /** @var array $data */
-var_dump($data['categories']);
+// var_dump($data['categories']);
 
 require APP_ROOT . "/Views/includes/head.php";
 ?>
@@ -25,31 +25,19 @@ require APP_ROOT . "/Views/includes/head.php";
                     <input type="text" name="product_name" placeholder="Product Name">
                 </label>
 
-                <!--            <label>-->
-                <!--                <input type="number" name="product_id" placeholder="Product ID">-->
-                <!--            </label>-->
-
-                <!-- <label>
-                <input type="number" name="category_id" placeholder="Category ID">
-            </label> -->
-
                 <select name="category_id" style="width: 93%; height: 40px; margin: 5px 0;">
-                    <option value="1">one</option>
-                    <option value="2">two</option>
-                    <option value="3">three</option>
-                    <option value="4">four</option>
+                    <?php foreach ($data['categories'] as $category) : ?>
+                        <option value="<?= $category->category_id ?>"><?= $category->category_name ?></option>
+                    <?php endforeach; ?>
                 </select>
 
 
                 <select name="supplier_id" style="width: 93%; height: 40px; margin: 5px 0;">
-                    <option value="1">one</option>
-                    <option value="2">two</option>
-                    <option value="3">three</option>
-                    <option value="4">four</option>
+                    <?php foreach ($data['suppliers'] as $supplier) : ?>
+                        <option value="<?= $supplier->supplier_id ?>"><?= $supplier->supplier_name ?></option>
+                    <?php endforeach; ?>
                 </select>
-                <!-- <label>
-                <input type="number" name="supplier_id" placeholder="Supplier ID">
-            </label> -->
+
 
                 <label>
                     <input type="text" name="brand_name" placeholder="Brand's name">

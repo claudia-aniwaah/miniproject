@@ -37,7 +37,7 @@ class CategoryModel implements Model
     public function getSingle(int $id): mixed
     {
         // TODO: Implement getSingle() method.
-        return;
+        return null;
     }
 
     public function getFrom(DateTime $dateTime)
