@@ -1,0 +1,53 @@
+<?php
+
+class CategoryModel implements Model
+{
+    private Database $db;
+
+    public function __construct()
+    {
+        $this->db = Database::getInstance();
+    }
+
+    public function insert(array $values): bool
+    {
+        // TODO: Implement insert() method.
+        return false;
+    }
+
+
+    public function update(string $id): bool
+    {
+        // TODO: Implement update() method.
+        return false;
+    }
+
+    public function getAll(): array
+    {
+        // TODO: Implement getAll() method.
+        return [];
+    }
+
+    public function rowCount(): int
+    {
+        // TODO: Implement rowCount() method.
+        return 0;
+    }
+
+    public function getSingle(int $id): mixed
+    {
+        // TODO: Implement getSingle() method.
+        return;
+    }
+
+    public function getFrom(DateTime $dateTime)
+    {
+        $this->db->query(sql: "SELECT * FROM `category`");
+        return $this->db->resultSet();
+    }
+
+    public function search($key)
+    {
+        // TODO: Implement search() method.
+    }
+}

@@ -9,7 +9,6 @@ class UserModel implements Model
     public function __construct()
     {
         $this->db = Database::getInstance();
-        $this->insertInto();
     }
 
 
@@ -54,11 +53,6 @@ class UserModel implements Model
     {
         // TODO: Implement update() method.
         return false;
-    }
-
-    public function insertInto(): void
-    {
-        // TODO: Implement insertInto() method.
     }
 
     public function insert(array $values): bool
