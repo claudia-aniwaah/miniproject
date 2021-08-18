@@ -24,8 +24,8 @@ class CategoryModel implements Model
 
     public function getAll(): array
     {
-        // TODO: Implement getAll() method.
-        return [];
+        $this->db->query(sql: "SELECT * FROM `category`");
+        return $this->db->resultSet();
     }
 
     public function rowCount(): int
@@ -42,8 +42,7 @@ class CategoryModel implements Model
 
     public function getFrom(DateTime $dateTime)
     {
-        $this->db->query(sql: "SELECT * FROM `category`");
-        return $this->db->resultSet();
+
     }
 
     public function search($key)
