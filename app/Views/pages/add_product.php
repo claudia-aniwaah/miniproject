@@ -53,7 +53,7 @@ require APP_ROOT . "/Views/includes/head.php";
             </label>
 
             <label>
-                <input type="submit" name="add-product" value="Add Product">
+                <input type="submit" name="add_product" value="Add Product">
             </label>
 
 

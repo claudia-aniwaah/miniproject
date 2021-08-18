@@ -25,11 +25,7 @@ require APP_ROOT . "/Views/includes/head.php";
             </label>
 
             <label>
-                <input type="number" min='0' step='1000' name="supplier_id" placeholder="Supplier ID">
-            </label>
-
-            <label>
-                <input type="number" min='0' step='1000' name="category_id" placeholder="Category ID">
+                <input type="text" name="phone" placeholder="Phone">
             </label>
 
             <label>
@@ -45,11 +41,7 @@ require APP_ROOT . "/Views/includes/head.php";
             </label>
 
             <label>
-                <input type="text" name="Status" placeholder="Status">
-            </label>
-
-            <label>
-                <input type="text" name="Other detail" placeholder="Other Detail">
+                <input type="text" name="supplier_desc" placeholder="Other Detail">
             </label>
 
             <input type="submit" name="add-supplier" value="Add Supplier">

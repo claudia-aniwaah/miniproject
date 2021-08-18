@@ -12,13 +12,6 @@ class ProductsModel implements Model
         $this->db = Database::getInstance();
     }
 
-    public function insertInto(): void
-    {
-//        $sql = "INSERT INTO `product`(`product_name`,`category_id`,`supplier_id`,`brand_name`,`price`,`quantity`, `status`) VALUES(?,?,?,?,?,?,?)";
-//        $this->db->query(sql: $sql);
-//        $value = array(implode(",", $values));
-//        $this->db->insert($value);
-    }
 
     public function update(string $id): bool
     {

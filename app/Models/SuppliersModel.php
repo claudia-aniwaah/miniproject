@@ -12,13 +12,6 @@ class SuppliersModel implements Model
         $this->db = Database::getInstance();
     }
 
-    public function insertInto(): void
-    {
-//        $sql = "INSERT INTO `supplier`(`supplier_name`,`address`,`phone_number`,`email`,`supplier_desc`,`fax`) VALUES(?,?,?,?,?,?)";
-//        $this->db->query(sql: $sql);
-//        $value = array(implode(",", $values));
-//        $this->db->insert($value);
-    }
 
     public function update(string $id): bool
     {
@@ -58,11 +51,9 @@ class SuppliersModel implements Model
     {
         $sql = "INSERT INTO `supplier`(`supplier_name`,`address`,`phone_number`,`email`,`supplier_desc`,`fax`) VALUES(?,?,?,?,?,?)";
         $this->db->query(sql: $sql);
-        $value = array(implode(",", $values));
-        if ($this->db->insert($value)) {
+        if ($this->db->insert($values)) {
             return true;
         }
-
         return false;
     }
 }

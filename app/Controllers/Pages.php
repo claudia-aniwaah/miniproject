@@ -74,6 +74,22 @@ class Pages extends Controller
 
     public function add_supplier(): void
     {
+        if (isset($_POST['add-supplier'])) {
+            $supplier_name = $_POST['supplier_name'];
+            $address = $_POST['address'];
+            $phone_number = $_POST['phone'];
+            $email = $_POST['email'];
+            $supplier_desc = $_POST['supplier_desc'];
+            $fax = $_POST['fax'];
+            echo $supplier_desc;
+
+            $supplier = $this->supplierModel->insert(array($supplier_name, $address, $phone_number, $email, $supplier_desc, $fax));
+            if ($supplier) {
+                echo "Data saved successfully";
+            }
+        }
+
+
         $data = [
             'title' => 'ADD SUPPLIER',
         ];
