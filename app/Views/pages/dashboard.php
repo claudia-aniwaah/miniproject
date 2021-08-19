@@ -31,7 +31,7 @@ require APP_ROOT . "/Views/includes/head.php";
             </div>
 
             <div class="grid-child">
-                <a href="supplier.php">
+                <a href="<?= URL_ROOT ?>/pages/supliers">
                     <div class="icon-holder"><i class="fa fa-industry"></i></div>
                     <div class="desc-holder">
                         <h3>SUPPLIER</h3>
@@ -40,7 +40,7 @@ require APP_ROOT . "/Views/includes/head.php";
             </div>
 
             <div class="grid-child">
-                <a href="staff.php">
+                <a href="<?= URL_ROOT ?>/pages/employees">
                     <div class="icon-holder"><i class="fa fa-users"></i></div>
                     <div class="desc-holder">
                         <h3>EMPLOYEES</h3>
@@ -49,7 +49,7 @@ require APP_ROOT . "/Views/includes/head.php";
             </div>
 
             <div class="grid-child">
-                <a href="product.php">
+                <a href="<?= URL_ROOT ?>/pages/products">
                     <div class="icon-holder"><i class="fa fa-sitemap"></i></div>
                     <div class="desc-holder">
                         <h3>PRODUCTS</h3>

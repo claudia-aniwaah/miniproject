@@ -1,4 +1,4 @@
-<?php
+ <?php
 if (!isset($_SESSION['logged_in_user'])) {
     header('location:' . URL_ROOT . '/users/login');
     die("Unauthorized access");
@@ -18,7 +18,7 @@ require APP_ROOT . "/Views/includes/head.php";
 
     <div id="flex-child-content">
 
-        <div>
+        <div id="float">
             <h1 class="page-header">PRODUCTS</h1>
             <a href="<?= URL_ROOT ?>/pages/add_product">Add product</a>
         </div>
