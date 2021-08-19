@@ -1,0 +1,55 @@
+body{
+	height:100vh;
+	
+}
+
+.topNav{
+background-color:#1e90ff;
+color:white;
+text-decoration:none;
+padding:10px;
+}
+
+.dashee {
+font-size:18px;
+color:white;
+text-decoration:none;
+padding:10px;
+width:100vh;
+}
+
+.logoutBtn{
+float:right;
+color:white;
+text-decoration:none;
+border:1px solid white;
+border-radius:5px;
+	
+}
+.logoutBtn:hover{
+	 background: blue;
+	 color:white;
+}
+
+.nextNav{
+   position:relative;
+	border-bottom:1px solid #1e90ff;
+	padding-top:20px;
+}
+	
+	
+.editee{
+font-size:20px;
+text-decoration:none;
+padding-bottom:30px;
+color:black;
+}
+
+.info{
+float:right;
+color:white;
+text-decoration:none;
+padding:3px;
+
+	
+}
