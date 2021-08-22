@@ -4,19 +4,19 @@ if (!isset($_SESSION['logged_in_user'])) {
     die("You are already logged in");
 }
 /** @var array $data */
-// echo $data['login_error'];
-
 require APP_ROOT . "/Views/includes/head.php";
 ?>
-<link rel="stylesheet" href="<?= URL_ROOT ?>/public/assets/css/add-user-style.css"/>
+<link rel="stylesheet" href="<?= URL_ROOT ?>/public/assets/css/add-employee-style.css"/>
 <title><?= $data['title'] ?></title>
 
 </head>
 
 <body>
 
-<section id="add-user-section-wrapper">
-    <h1>ADD USER</h1>
+<section id="edit-profile-section-wrapper">
+    <h1>Edit profile</h1>
+
+    <!--     action="--><?php //= URL_ROOT ?><!--/users/update_user" -->
 </section>
 
 </body>

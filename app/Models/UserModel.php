@@ -14,7 +14,13 @@ class UserModel implements Model
 
     public function getAll(): array
     {
-        $this->db->query(sql: "SELECT * FROM `staff`");
+        $sql = "SELECT * FROM `staff` 
+                INNER JOIN `positions` ON staff.position_id = positions.position_id 
+                INNER JOIN `gender` ON staff.gender_id = gender.gender_id
+                INNER JOIN `marital_status` ON staff.marital_status_id = marital_status.marital_status_id
+                ORDER BY staff.staff_id";
+
+        $this->db->query(sql: $sql);
         return $this->db->resultSet();
     }
 
@@ -35,14 +41,6 @@ class UserModel implements Model
         return [];
     }
 
-//    public function insertInto(array $values): void
-//    {
-////        $sql = "INSERT INTO `staff`(`position_id`,`gender_id`,`marital_status_id`,`first_name`,`last_name`,`other_name`, `address`, `phone_number`, `email`, `password`)                VALUES(?,?,?,?,?,?,?,?,?,?)";
-////        $this->db->query(sql: $sql);
-////        $value = array(implode(",", $values));
-////        $this->db->insert($value);
-//
-//    }
 
     public function rowCount(): int
     {
@@ -57,7 +55,11 @@ class UserModel implements Model
 
     public function insert(array $values): bool
     {
-        // TODO: Implement insert() method.
+        $sql = "INSERT INTO `staff`(`position_id`,`gender_id`,`marital_status_id`,`first_name`,`last_name`,`address`,`phone_number`,`email`, `username`) VALUES(?,?,?,?,?,?,?,?,?)";
+        $this->db->query(sql: $sql);
+        if ($this->db->insert($values)) {
+            return true;
+        }
         return false;
     }
 }

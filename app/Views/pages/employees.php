@@ -4,6 +4,7 @@ if (!isset($_SESSION['logged_in_user'])) {
     die("Unauthorized access");
 }
 /** @var array $data */
+
 require APP_ROOT . "/Views/includes/head.php";
 
 ?>
@@ -20,7 +21,7 @@ require APP_ROOT . "/Views/includes/head.php";
 
         <div>
             <h1 class="page-header">EMPLOYEES</h1>
-            <a href="<?= URL_ROOT ?>/pages/add_product">Add employee</a>
+            <a href="<?= URL_ROOT ?>/users/add_user">Add employee</a>
         </div>
 
 
@@ -34,15 +35,14 @@ require APP_ROOT . "/Views/includes/head.php";
                     <thead>
                     <tr>
                         <th scope="col">Staff ID</th>
-                        <th scope="col">Position ID</th>
-                        <th scope="col">Gender ID</th>
-                        <th scope="col">Marital Status ID</th>
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>
+                        <th scope="col">Position</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Marital Status</th>
                         <th scope="col">Address</th>
                         <th scope="col">Phone</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Username</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -50,18 +50,16 @@ require APP_ROOT . "/Views/includes/head.php";
                     <?php foreach ($data['staff'] as $staff) : ?>
                         <tr>
                             <th scope="row"><?= $staff->staff_id ?></th>
-                            <td><?= $staff->position_id?></td>
-                            <td><?= $staff->gender_id ?></td>
-                            <td><?= $staff->marital_status_id?></td>
                             <td><?= $staff->first_name ?></td>
                             <td><?= $staff->last_name ?></td>
-                            <td><?= $staff->address?></td>
-                            <td><?= $staff->phone?></td>
-                            <td><?= $staff->email?></td>
-                            <td><?= $staff->username?></td>
+                            <td><?= $staff->position_name ?></td>
+                            <td><?= $staff->gender_name ?></td>
+                            <td><?= $staff->status ?></td>
+                            <td><?= $staff->address ?></td>
+                            <td><?= $staff->phone_number ?></td>
+                            <td><?= $staff->email ?></td>
                         </tr>
                     <?php endforeach; ?>
-
                     </tbody>
                 </table>
 

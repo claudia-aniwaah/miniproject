@@ -17,19 +17,7 @@ require APP_ROOT . "/Views/includes/head.php";
 
     <div id="form-wrapper">
         <h3>Add Employee</h3>
-        <form action="<?= URL_ROOT ?>/pages/add_employee" method="POST">
-
-            <label>
-                <input type="text" name="product_name" placeholder="Product Name">
-            </label>
-
-            <label>
-                <input type="number" min='0' step='1000' name="staff_id" placeholder="Staff ID">
-            </label>
-
-            <label>
-                <input type="number" min='0' step='1000' name="position_id" placeholder="Position ID">
-            </label>
+        <form action="<?= URL_ROOT ?>/users/add_user" method="POST">
 
             <label>
                 <input type="text" name="first_name" placeholder="First name">
@@ -40,8 +28,32 @@ require APP_ROOT . "/Views/includes/head.php";
                 <input type="text" name="last_name" placeholder="Last name">
             </label>
 
+
             <label>
-                <input type="number" min ="0" name="phone" placeholder="Phone">
+                <input type="text" name="product_name" placeholder="Product Name">
+            </label>
+
+            <label>
+                <input type="number" min='0' step='1000' name="staff_id" placeholder="Staff ID">
+            </label>
+
+
+<!--            <label>-->
+<!--                <input type="number" min='0' step='1000' name="position_id" placeholder="Position ID">-->
+<!--            </label>-->
+
+            <label>
+                <select name="category_id" style="width: 93%; height: 40px; margin: 5px 0;">
+                    <option value="1"> Test</option>
+                    <option value="2"> Test</option>
+                    <option value="3"> Test</option>
+                    <option value="4"> Test</option>
+                </select>
+            </label>
+
+
+            <label>
+                <input type="number" min="0" name="phone" placeholder="Phone">
             </label>
 
 
@@ -56,7 +68,7 @@ require APP_ROOT . "/Views/includes/head.php";
             <label>
                 <input type="email" name="email" placeholder="Email">
             </label>
-          
+
             <input type="submit" name="add-employee" value="Add Employee">
 
         </form>

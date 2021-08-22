@@ -14,6 +14,7 @@ class Pages extends Controller
         $this->productModel = $this->model("ProductsModel");
         $this->supplierModel = $this->model("SuppliersModel");
         $this->categoryModel = $this->model("CategoryModel");
+
     }
 
 
@@ -63,14 +64,14 @@ class Pages extends Controller
 
             $products = $this->productModel->insert(array($product_name, $category_id, $supplier_id, $brand_name, $price, $quantity, $status));
             if ($products) {
-                header("location:".URL_ROOT."/pages/products");
+                header("location:" . URL_ROOT . "/pages/products");
             }
         }
 
         $data = [
             'title' => 'ADD PRODUCTS',
-            'suppliers' =>  $this->supplierModel->getAll(),
-            'categories' =>  $this->categoryModel->getAll()
+            'suppliers' => $this->supplierModel->getAll(),
+            'categories' => $this->categoryModel->getAll()
         ];
         $this->view("pages/add_product", $data);
     }
@@ -87,7 +88,8 @@ class Pages extends Controller
 
             $supplier = $this->supplierModel->insert(array($supplier_name, $address, $phone_number, $email, $supplier_desc, $fax));
             if ($supplier) {
-                header("location:".URL_ROOT."/pages/suppliers");            }
+                header("location:" . URL_ROOT . "/pages/suppliers");
+            }
         }
 
 
