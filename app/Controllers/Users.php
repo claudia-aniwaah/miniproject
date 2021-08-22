@@ -52,10 +52,13 @@ class Users extends Controller
     public function add_user(): void
     {
 
-        $add_staff = $this->userModel->insert(array([]));
-        if ($add_staff) {
-            header("location:" . URL_ROOT . "/pages/staff");
-        }
+//        if ($_POST['add_staff']) {
+//            $add_staff = $this->userModel->insert(array([]));
+//            if ($add_staff) {
+//                header("location:" . URL_ROOT . "/pages/staff");
+//            }
+//        }
+
 
         $data = [
             'title' => 'PRODUCTS',
@@ -66,12 +69,12 @@ class Users extends Controller
 
     public function update_user(): void
     {
-        if ($_POST['update_staff']) {
-            $update_staff = $this->userModel->update(array([]));
-            if ($update_staff) {
-                header("location:" . URL_ROOT . "/pages/staff");
-            }
-        }
+//        if ($_POST['update_staff']) {
+//            $update_staff = $this->userModel->update(array([]));
+//            if ($update_staff) {
+//                header("location:" . URL_ROOT . "/pages/staff");
+//            }
+//        }
 
 
         $data = [
