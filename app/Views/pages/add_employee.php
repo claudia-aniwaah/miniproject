@@ -23,13 +23,23 @@ require APP_ROOT . "/Views/includes/head.php";
                 <input type="text" name="product_name" placeholder="Product Name">
             </label>
 
-            <label>
-                <input type="number" min='0' step='1000' name="staff_id" placeholder="Staff ID">
-            </label>
+            <select name="position_id" style="width: 93%; height: 40px; margin: 5px 0;">
+                    <?php foreach ($data['positions'] as $position) : ?>
+                        <option value="<?= $position->position_id ?>"><?= $position->position_name ?></option>
+                    <?php endforeach; ?>
+                </select>
 
-            <label>
-                <input type="number" min='0' step='1000' name="position_id" placeholder="Position ID">
-            </label>
+                <select name="matirial_id" style="width: 93%; height: 40px; margin: 5px 0;">
+                    <?php foreach ($data['maritals'] as $marital) : ?>
+                        <option value="<?= $marital->marital_id ?>"><?= $marital->marital_name ?></option>
+                    <?php endforeach; ?>
+                </select>
+
+                <select name="gender_id" style="width: 93%; height: 40px; margin: 5px 0;">
+                    <?php foreach ($data['genders'] as $gender) : ?>
+                        <option value="<?= $gender->gender_id ?>"><?= $gender->gender_name ?></option>
+                    <?php endforeach; ?>
+                </select>
 
             <label>
                 <input type="text" name="first_name" placeholder="First name">
