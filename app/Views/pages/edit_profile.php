@@ -4,22 +4,22 @@ if (!isset($_SESSION['logged_in_user'])) {
     die("You are already logged in");
 }
 /** @var array $data */
-
 require APP_ROOT . "/Views/includes/head.php";
 ?>
 <link rel="stylesheet" href="<?= URL_ROOT ?>/public/assets/css/add-employee-style.css"/>
 <title><?= $data['title'] ?></title>
+
 </head>
 
 <body>
 
-<section id="add-employee-section-wrapper">
+<section id="edit-profile-section-wrapper">
+    <h1>Edit profile</h1>
 
-    <div id="form-wrapper">
-        <h3>Add Employee</h3>
-        <form action="<?= URL_ROOT ?>/users/add_user" method="POST">
+    <form action="<?= URL_ROOT ?>/users/update_user"  method= "POST">
+    
 
-            <label>
+    <label>
                 <input type="text" name="first_name" placeholder="First name">
             </label>
 
@@ -73,7 +73,6 @@ require APP_ROOT . "/Views/includes/head.php";
 
         </form>
     </div>
-
 
 </section>
 

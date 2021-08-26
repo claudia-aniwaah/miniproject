@@ -51,9 +51,47 @@ class Users extends Controller
 
     public function add_user(): void
     {
+
+//        if ($_POST['add_staff']) {
+//            $add_staff = $this->userModel->insert(array([]));
+//            if ($add_staff) {
+//                header("location:" . URL_ROOT . "/pages/staff");
+//            }
+//        }
+
+
         $data = [
             'title' => 'PRODUCTS',
         ];
         $this->view("pages/add_user", $data);
+    }
+
+
+    public function update_user(): void
+    {
+//        if ($_POST['update_staff']) {
+//            $update_staff = $this->userModel->update(array([]));
+//            if ($update_staff) {
+//                header("location:" . URL_ROOT . "/pages/staff");
+//            }
+//        }
+
+
+        $data = [
+            'title' => 'Edit Profile',
+        ];
+        $this->view("pages/edit_profile", $data);
+    }
+
+
+    public function staff(): void
+    {
+        $staff = $this->userModel->getAll();
+
+        $data = [
+            'title' => 'Staff',
+            'staff' => $staff
+        ];
+        $this->view("pages/employees", $data);
     }
 }
