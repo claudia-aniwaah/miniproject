@@ -2,7 +2,7 @@
 if (!isset($_SESSION['logged_in_user'])) {
     header('location:' . URL_ROOT . '/users/login');
     die("You are already logged in");
-}
+} 
 /** @var array $data */
 
 require APP_ROOT . "/Views/includes/head.php";
@@ -17,7 +17,7 @@ require APP_ROOT . "/Views/includes/head.php";
 
     <div id="form-wrapper">
         <h3>Add Employee</h3>
-        <form action="<?= URL_ROOT ?>/users/add_user" method="POST">
+        <form action="<?= URL_ROOT ?>/users/add_employee" method="POST">
 
             <label>
                 <input type="text" name="first_name" placeholder="First name">
