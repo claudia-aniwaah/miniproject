@@ -26,26 +26,26 @@ require APP_ROOT . "/Views/includes/head.php";
 
             <label>
                 <input type="text" name="last_name" placeholder="Last name">
-    
+
             </label>
 
             <select name="position_id" style="width: 93%; height: 40px; margin: 5px 0;">
-                    <?php foreach ($data['positions'] as $position) : ?>
-                        <option value="<?= $position->position_id ?>"><?= $position->position_name ?></option>
-                    <?php endforeach; ?>
-                </select>
+                <?php foreach ($data['positions'] as $position) : ?>
+                    <option value="<?= $position->position_id ?>"><?= $position->position_name ?></option>
+                <?php endforeach; ?>
+            </select>
 
-                <select name="matirial_id" style="width: 93%; height: 40px; margin: 5px 0;">
-                    <?php foreach ($data['maritals'] as $marital) : ?>
-                        <option value="<?= $marital->marital_id ?>"><?= $marital->marital_name ?></option>
-                    <?php endforeach; ?>
-                </select>
+            <select name="matirial_id" style="width: 93%; height: 40px; margin: 5px 0;">
+                <?php foreach ($data['maritals'] as $marital) : ?>
+                    <option value="<?= $marital->marital_id ?>"><?= $marital->marital_name ?></option>
+                <?php endforeach; ?>
+            </select>
 
-                <select name="gender_id" style="width: 93%; height: 40px; margin: 5px 0;">
-                    <?php foreach ($data['genders'] as $gender) : ?>
-                        <option value="<?= $gender->gender_id ?>"><?= $gender->gender_name ?></option>
-                    <?php endforeach; ?>
-                </select>
+            <select name="gender_id" style="width: 93%; height: 40px; margin: 5px 0;">
+                <?php foreach ($data['genders'] as $gender) : ?>
+                    <option value="<?= $gender->gender_id ?>"><?= $gender->gender_name ?></option>
+                <?php endforeach; ?>
+            </select>
 
 
             <label>
@@ -70,7 +70,6 @@ require APP_ROOT . "/Views/includes/head.php";
             </label>
 
             <input type="submit" name="add-employee" value="Add Employee">
-
         </form>
     </div>
 

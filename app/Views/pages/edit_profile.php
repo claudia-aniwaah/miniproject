@@ -16,62 +16,70 @@ require APP_ROOT . "/Views/includes/head.php";
 <section id="edit-profile-section-wrapper">
     <h1>Edit profile</h1>
 
-    <form action="<?= URL_ROOT ?>/users/update_user"  method= "POST">
-    
-
-    <label>
-                <input type="text" name="first_name" placeholder="First name">
-            </label>
+    <form action="<?= URL_ROOT ?>/users/update_user" method="POST">
 
 
-            <label>
-                <input type="text" name="last_name" placeholder="Last name">
-    
-            </label>
+        <label>
+            <input type="text" name="first_name" placeholder="First name">
+        </label>
 
+
+        <label>
+            <input type="text" name="last_name" placeholder="Last name">
+
+        </label>
+
+        <label>
             <select name="position_id" style="width: 93%; height: 40px; margin: 5px 0;">
-                    <?php foreach ($data['positions'] as $position) : ?>
-                        <option value="<?= $position->position_id ?>"><?= $position->position_name ?></option>
-                    <?php endforeach; ?>
-                </select>
+                <?php foreach ($data['positions'] as $position) : ?>
+                    <option value="<?= $position->position_id ?>"><?= $position->position_name ?></option>
+                <?php endforeach; ?>
+            </select>
+        </label>
 
-                <select name="matirial_id" style="width: 93%; height: 40px; margin: 5px 0;">
-                    <?php foreach ($data['maritals'] as $marital) : ?>
-                        <option value="<?= $marital->marital_id ?>"><?= $marital->marital_name ?></option>
-                    <?php endforeach; ?>
-                </select>
-
-                <select name="gender_id" style="width: 93%; height: 40px; margin: 5px 0;">
-                    <?php foreach ($data['genders'] as $gender) : ?>
-                        <option value="<?= $gender->gender_id ?>"><?= $gender->gender_name ?></option>
-                    <?php endforeach; ?>
-                </select>
+        <label>
+            <select name="matirial_id" style="width: 93%; height: 40px; margin: 5px 0;">
+                <?php foreach ($data['maritals'] as $marital) : ?>
+                    <option value="<?= $marital->marital_id ?>"><?= $marital->marital_name ?></option>
+                <?php endforeach; ?>
+            </select>
+        </label>
 
 
-            <label>
-                <input type="text" name="product_name" placeholder="Product Name">
-            </label>
+        <label>
+            <select name="gender_id" style="width: 93%; height: 40px; margin: 5px 0;">
+                <?php foreach ($data['genders'] as $gender) : ?>
+                    <option value="<?= $gender->gender_id ?>"><?= $gender->gender_name ?></option>
+                <?php endforeach; ?>
+            </select>
+        </label>
 
-            <label>
-                <input type="number" min="0" name="phone" placeholder="Phone">
-            </label>
+
+        <label>
+            <input type="text" name="product_name" placeholder="Product Name">
+        </label>
 
 
-            <label>
-                <input type="text" name="address" placeholder="Address">
-            </label>
+        <label>
+            <input type="number" min="0" name="phone" placeholder="Phone">
+        </label>
 
-            <label>
-                <input type="text" name="username" placeholder="Username">
-            </label>
 
-            <label>
-                <input type="email" name="email" placeholder="Email">
-            </label>
+        <label>
+            <input type="text" name="address" placeholder="Address">
+        </label>
 
-            <input type="submit" name="add-employee" value="Add Employee">
+        <label>
+            <input type="text" name="username" placeholder="Username">
+        </label>
 
-        </form>
+        <label>
+            <input type="email" name="email" placeholder="Email">
+        </label>
+
+        <input type="submit" name="add-employee" value="Add Employee">
+
+    </form>
     </div>
 
 </section>
