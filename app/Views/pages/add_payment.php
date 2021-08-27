@@ -16,7 +16,7 @@ require APP_ROOT . "/Views/includes/head.php";
 <section id="add-payment-section-wrapper">
 
     <div id="form-wrapper">
-        <h3>Add Employee</h3>
+        <h3>Add Payment</h3>
         <form action="<?= URL_ROOT ?>/pages/add_payment" method="POST">
 
             

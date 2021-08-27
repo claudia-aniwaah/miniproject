@@ -9,7 +9,7 @@ form {
 }
 
 
-section#add-employee-section-wrapper input {
+section#edit-profile-section-wrapper input {
     display: block !important;
     width: 465px;
     margin-top: 5px;
@@ -21,7 +21,7 @@ section#add-employee-section-wrapper input {
     background-color: rgb(223, 242, 247);
 }
 
-section#add-employee-section-wrapper input[type='submit'] {
+section#edit-profile-section-wrapper input[type='submit'] {
     margin-top: 20px;
     background-color: cornflowerblue;
     color: whitesmoke;
@@ -30,7 +30,7 @@ section#add-employee-section-wrapper input[type='submit'] {
 
 }
 
-section#add-employee-section-wrapper input[type='submit']:hover {
+section#edit-profile-section-wrapper input[type='submit']:hover {
     background: rgb(21, 91, 221);;
 }
 

@@ -6,7 +6,7 @@ if (!isset($_SESSION['logged_in_user'])) {
 /** @var array $data */
 require APP_ROOT . "/Views/includes/head.php";
 ?>
-<link rel="stylesheet" href="<?= URL_ROOT ?>/public/assets/css/add-employee-style.css"/>
+<link rel="stylesheet" href="<?= URL_ROOT ?>/public/assets/css/edit-profile-style.css"/>
 <title><?= $data['title'] ?></title>
 
 </head>
@@ -14,7 +14,7 @@ require APP_ROOT . "/Views/includes/head.php";
 <body>
 
 <section id="edit-profile-section-wrapper">
-    <h1>Edit profile</h1>
+    <h3>Edit profile</h3>
 
     <form action="<?= URL_ROOT ?>/users/update_user" method="POST">
 
