@@ -7,10 +7,17 @@ class Users extends Controller
     use Validation;
 
     private Model $userModel;
+    private Model $genderModel;
+    private Model $positionsModel;
+    private Model $maritalStatusModel;
+
 
     public function __construct()
     {
         $this->userModel = $this->model("UserModel");
+        $this->genderModel = $this->model("GenderModel");
+        $this->positionsModel = $this->model("PositionsModel");
+        $this->maritalStatusModel = $this->model("MaritalStatusModel");
     }
 
     public function login(): void
@@ -52,33 +59,65 @@ class Users extends Controller
     public function add_user(): void
     {
 
-//        if ($_POST['add_staff']) {
-//            $add_staff = $this->userModel->insert(array([]));
-//            if ($add_staff) {
-//                header("location:" . URL_ROOT . "/pages/staff");
-//            }
-//        }
+        if (isset($_POST['add-employee'])) {
+//            var_dump($_POST);
 
+            $first_name = $_POST['first_name'];
+            $last_name = $_POST['last_name'];
+            $other_name = $_POST['other_name'];
+            $password = $_POST['password'];
+            $email = $_POST['email'];
+            $position = $_POST['position_id'];
+            $marital_status = $_POST['marital_status_id'];
+            $gender = $_POST['gender_id'];
+            $address = $_POST['address'];
+            $phone_number = $_POST['phone'];
+
+            $hash_password = password_hash($password, PASSWORD_DEFAULT);
+
+            $add_staff = $this->userModel->insert(array($position, $gender, $marital_status, $first_name, $last_name, $other_name, $address, $phone_number, $email, $hash_password));
+            if ($add_staff) {
+                header("location:" . URL_ROOT . "/user/staff");
+            }
+
+        }
 
         $data = [
-            'title' => 'PRODUCTS',
+            'title' => 'Edit Profile',
+            'gender' => $this->genderModel->getAll(),
+            'position' => $this->positionsModel->getAll(),
+            'marital_status' => $this->maritalStatusModel->getAll(),
         ];
-        $this->view("pages/add_user", $data);
+        $this->view("pages/add_employee", $data);
     }
 
 
     public function update_user(): void
     {
-//        if ($_POST['update_staff']) {
-//            $update_staff = $this->userModel->update(array([]));
-//            if ($update_staff) {
-//                header("location:" . URL_ROOT . "/pages/staff");
-//            }
-//        }
+        if (isset($_POST['update-employee'])) {
+            $first_name = $_POST['first_name'];
+            $last_name = $_POST['last_name'];
+            $other_name = $_POST['other_name'];
+            $email = $_POST['email'];
+            $position = $_POST['position_id'];
+            $marital_status = $_POST['marital_status_id'];
+            $gender = $_POST['gender_id'];
+            $address = $_POST['address'];
+            $phone_number = $_POST['phone'];
+
+            $update_staff = $this->userModel->update(array($position, $gender, $marital_status, $first_name, $last_name, $other_name, $address, $phone_number, $email, $_SESSION['logged_in_user']), $_SESSION['logged_in_user']);
+            if ($update_staff) {
+                header("location:" . URL_ROOT . "/user/staff");
+            }
+        }
 
 
         $data = [
             'title' => 'Edit Profile',
+            'gender' => $this->genderModel->getAll(),
+            'position' => $this->positionsModel->getAll(),
+            'marital_status' => $this->maritalStatusModel->getAll(),
+            'user' => $this->userModel->getSingle($_SESSION['logged_in_user'])
         ];
         $this->view("pages/edit_profile", $data);
     }
@@ -86,12 +125,24 @@ class Users extends Controller
 
     public function staff(): void
     {
-        $staff = $this->userModel->getAll();
 
         $data = [
             'title' => 'Staff',
-            'staff' => $staff
+            'staff' => $this->userModel->getAll()
         ];
         $this->view("pages/employees", $data);
     }
+
+
+    public function sign_out(): void
+    {
+        unset($_SESSION['logged_in_user']);
+        $data = [
+            'title' => 'Login',
+            'login_error' => '',
+        ];
+        $this->view("pages/login", $data);
+    }
 }
+
+

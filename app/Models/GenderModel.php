@@ -17,7 +17,7 @@ class GenderModel implements Model
 //
 //    }
 
-    public function update(string $id): bool
+    public function update(array $values,string $id): bool
     {
         // TODO: Implement update() method.
         return false;
@@ -25,8 +25,8 @@ class GenderModel implements Model
 
     public function getAll(): array
     {
-        // TODO: Implement getAll() method.
-        return [];
+        $this->db->query(sql: "SELECT * FROM `gender`");
+        return $this->db->resultSet();
     }
 
     public function getSingle(int $id): mixed

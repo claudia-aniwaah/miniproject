@@ -21,7 +21,10 @@ require APP_ROOT . "/Views/includes/head.php";
 
         <div>
             <h1 class="page-header">EMPLOYEES</h1>
-            <a href="<?= URL_ROOT ?>/users/add_user">Add employee</a>
+            <?php if ($_SESSION['logged_in_user'] === '410000'): ?>
+                <a href="<?= URL_ROOT ?>/users/add_user">Add employee</a>
+            <?php endif; ?>
+
         </div>
 
 

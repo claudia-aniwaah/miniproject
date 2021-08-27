@@ -26,9 +26,11 @@
                 <li><a class="side-bar-menu-link" href="<?= URL_ROOT ?>/pages/products"><i class="fa fa-sitemap"></i>
                         Products</a><br/>
                 </li>
-                <li><a class="side-bar-menu-link" href="order.html"><i class="fa fa-shopping-cart"></i> Orders</a>
-                </li>
-                <li><a class="side-bar-menu-link" href="payment.html"><i class="fa fa-money"></i> Payment</a></li>
+                <!--                <li><a class="side-bar-menu-link" href="order.html"><i class="fa fa-shopping-cart"></i> Orders</a>-->
+                <!--                </li>-->
+                <!--                <li><a class="side-bar-menu-link" href="payment.html"><i class="fa fa-money"></i> Payment</a></li>-->
+                <li><a class="side-bar-menu-link" href="<?= URL_ROOT ?>/users/sign_out"><i class="fa fa-sign-out"></i>Sign
+                        Out</a></li>
             </ul>
 
             <p class="change-pass"><i class="fa fa-key"></i>CHANGE PASSWORD</p>

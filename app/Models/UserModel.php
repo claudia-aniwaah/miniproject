@@ -26,7 +26,14 @@ class UserModel implements Model
 
     public function getSingle(int $id): mixed
     {
-        $this->db->query(sql: "SELECT * FROM `staff` WHERE staff_id=$id");
+        $sql = "SELECT * FROM `staff` 
+                INNER JOIN `positions` ON staff.position_id = positions.position_id 
+                INNER JOIN `gender` ON staff.gender_id = gender.gender_id
+                INNER JOIN `marital_status` ON staff.marital_status_id = marital_status.marital_status_id
+                WHERE `staff_id` = $id
+                ORDER BY staff.staff_id";
+
+        $this->db->query(sql: $sql);
         return $this->db->getSingle();
     }
 
@@ -47,15 +54,31 @@ class UserModel implements Model
         return $this->db->rowCount();
     }
 
-    public function update(string $id): bool
+    public function update(array $values, string $id): bool
     {
-        // TODO: Implement update() method.
+//        var_dump($values);
+        $sql = "UPDATE `staff` SET
+                position_id = ?, 
+                gender_id = ?,
+                marital_status_id = ?, 
+                first_name = ?,
+                last_name = ?, 
+                other_name = ?,
+                address = ?, 
+                phone_number = ?,
+                email = ?
+        WHERE staff_id = ?";
+
+        $this->db->query(sql: $sql);
+        if ($this->db->insert($values)) {
+            return true;
+        }
         return false;
     }
 
     public function insert(array $values): bool
     {
-        $sql = "INSERT INTO `staff`(`position_id`,`gender_id`,`marital_status_id`,`first_name`,`last_name`,`address`,`phone_number`,`email`, `username`) VALUES(?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO `staff`(`position_id`,`gender_id`,`marital_status_id`,`first_name`,`last_name`, `other_name`,`address`,`phone_number`,`email`, `password`) VALUES(?,?,?,?,?,?,?,?,?,?)";
         $this->db->query(sql: $sql);
         if ($this->db->insert($values)) {
             return true;

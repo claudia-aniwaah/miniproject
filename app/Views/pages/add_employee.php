@@ -2,7 +2,7 @@
 if (!isset($_SESSION['logged_in_user'])) {
     header('location:' . URL_ROOT . '/users/login');
     die("You are already logged in");
-} 
+}
 /** @var array $data */
 
 require APP_ROOT . "/Views/includes/head.php";
@@ -17,7 +17,7 @@ require APP_ROOT . "/Views/includes/head.php";
 
     <div id="form-wrapper">
         <h3>Add Employee</h3>
-        <form action="<?= URL_ROOT ?>/users/add_employee" method="POST">
+        <form action="<?= URL_ROOT ?>/users/add_user" method="POST">
 
             <label>
                 <input type="text" name="first_name" placeholder="First name">
@@ -26,34 +26,44 @@ require APP_ROOT . "/Views/includes/head.php";
 
             <label>
                 <input type="text" name="last_name" placeholder="Last name">
+            </label>
 
+
+            <label>
+                <input type="text" name="other_name" placeholder="Other Name">
+            </label>
+
+            <label>
+                <input type="password" name="password" placeholder="Enter password">
+            </label>
+
+            <label>
+                <input type="email" name="email" placeholder="Email">
             </label>
 
             <select name="position_id" style="width: 93%; height: 40px; margin: 5px 0;">
-                <?php foreach ($data['positions'] as $position) : ?>
+                <?php foreach ($data['position'] as $position) : ?>
                     <option value="<?= $position->position_id ?>"><?= $position->position_name ?></option>
                 <?php endforeach; ?>
             </select>
 
-            <select name="matirial_id" style="width: 93%; height: 40px; margin: 5px 0;">
-                <?php foreach ($data['maritals'] as $marital) : ?>
-                    <option value="<?= $marital->marital_id ?>"><?= $marital->marital_name ?></option>
+
+            <select name="marital_status_id" style="width: 93%; height: 40px; margin: 5px 0;">
+                <?php foreach ($data['marital_status'] as $marital) : ?>
+                    <option value="<?= $marital->marital_status_id ?>"><?= $marital->status ?></option>
                 <?php endforeach; ?>
             </select>
 
+
             <select name="gender_id" style="width: 93%; height: 40px; margin: 5px 0;">
-                <?php foreach ($data['genders'] as $gender) : ?>
+                <?php foreach ($data['gender'] as $gender) : ?>
                     <option value="<?= $gender->gender_id ?>"><?= $gender->gender_name ?></option>
                 <?php endforeach; ?>
             </select>
 
 
             <label>
-                <input type="text" name="product_name" placeholder="Product Name">
-            </label>
-
-            <label>
-                <input type="number" min="0" name="phone" placeholder="Phone">
+                <input type="text" name="phone" placeholder="Phone">
             </label>
 
 
@@ -61,13 +71,6 @@ require APP_ROOT . "/Views/includes/head.php";
                 <input type="text" name="address" placeholder="Address">
             </label>
 
-            <label>
-                <input type="text" name="username" placeholder="Username">
-            </label>
-
-            <label>
-                <input type="email" name="email" placeholder="Email">
-            </label>
 
             <input type="submit" name="add-employee" value="Add Employee">
         </form>

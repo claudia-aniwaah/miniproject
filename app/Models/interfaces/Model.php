@@ -8,7 +8,7 @@ interface Model
 
     public function insert(array $values): bool;
 
-    public function update(string $id): bool;
+    public function update(array $values, string $id): bool;
 
     public function getAll(): array;
 

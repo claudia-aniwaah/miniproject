@@ -13,7 +13,7 @@ class ProductsModel implements Model
     }
 
 
-    public function update(string $id): bool
+    public function update(array $values,string $id): bool
     {
         // TODO: Implement update() method.
         return false;
